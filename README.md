@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="assets/dbx-logo.png" alt="Fabric" width="300"/>
+  <img src="assets/dbx-logo.png" alt="Fabric" width="350"/>
   &nbsp;&nbsp;&nbsp;
 </p>
 
-
+---
 
 # Databricks Workshops
 
