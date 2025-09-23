@@ -42,6 +42,8 @@ For storing our files we leverage an existing ADLS Gen2 account who serve as a c
 
 Let's create a new folder and upload the csv files accordingly
 
+![Prep](img/genie-prep1.png)
+![Prep](img/genie-prep2.png)
 
 
 ## 🛠️ Step 3 – Create Base Tables
