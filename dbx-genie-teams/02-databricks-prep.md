@@ -9,7 +9,7 @@ We will create a few base tables and simulate **real-time updates** to mimic a p
 
 # Ficticious Scenario
 
-**💊 Pharma-Cold Chain Monitoring **
+** 💊 Pharma-Cold Chain Monitoring **
 
 Pharma companies care deeply about cold chain integrity – vaccines, biologics, and temperature-sensitive drugs must stay in 2–8 °C at all times.
 This Genie demo can simulate a real-time monitoring system:
