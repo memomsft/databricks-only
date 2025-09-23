@@ -4,7 +4,7 @@
 ## 🔎 What is Databricks Genie?
 Databricks Genie is a **natural language interface** for querying and interacting with data inside the Databricks Lakehouse.  
 - Instead of writing SQL or Spark code, users can ask questions in plain English (or other languages).  
-- Genie translates those queries into optimized SQL/Spark jobs, executes them, and returns the results in real time.  
+- Genie translates those queries into optimized SQL code, executes them, and returns the results in real time.  
 - It helps democratize analytics by making data accessible to **business users, analysts, and technical teams** without requiring deep coding skills.  
 
 ---
