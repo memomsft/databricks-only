@@ -1,0 +1,6 @@
+SHIPMENT_ID,PRODUCT,ROUTE,ORIGIN,DESTINATION
+1001,Vacuna COVID,MEX-GDL,CDMX,Guadalajara
+1002,Insulina,MEX-MTY,CDMX,Monterrey
+1003,Vacuna Influenza,MEX-CUN,CDMX,Cancún
+1004,Antibiótico,MEX-MTY,CDMX,Monterrey
+1005,Plasma Sanguíneo,MEX-GDL,CDMX,Guadalajara
