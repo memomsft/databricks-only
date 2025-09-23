@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/dbx-logo.png" alt="Fabric" width="130"/>
+  <img src="assets/dbx-logo.png" alt="Fabric" width="300"/>
   &nbsp;&nbsp;&nbsp;
 </p>
 
