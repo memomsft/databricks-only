@@ -63,6 +63,10 @@ Before we can create tables backed by physical storage, we first need to make su
 
 ✅ In short: Credentials give Databricks the right to access storage, external locations specify exactly where, and Unity Catalog governs the relationship. For more information, please visit the Databricks docs.
 
+You can manage these constructs in the Databricks Workspace (Catalog Explorer). For example in order to provide access to the `vol` container from Databricks we have created an `external location` name `volumes` who is also mapped to a `storage credential` named `dbx_west_ws_pl` that provide access to these ADLS cloud storage locations.
+
+![Prep](img/genie-prep4.png)
+
 ---
 ## 🛠️ Step 3 – Create Base Tables
 
