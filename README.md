@@ -13,7 +13,7 @@ This repository collects multiple end-to-end integration and specific scenarios 
 
 | Scenario | Description | Folder |
 |---------|-------------|--------|
-| **Databricks Genie + Microsoft Teams** | Create a Genie Space and expose it via Teams for data democratization. | [Genie + MSFT Teams](./dbxGenie-Teams) |
+| **Databricks Genie + Microsoft Teams** | Create a Genie Space and expose it via Teams for data democratization. | [Genie + MSFT Teams](./dbx-genie-teams) |
   
 ---
 
