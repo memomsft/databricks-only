@@ -70,6 +70,10 @@ You can manage these constructs in the Databricks Workspace (Catalog Explorer). 
 ---
 ## 🛠️ Step 3 – Create Base Tables
 
-Open a **Databricks Notebook** (Python or PySpark) and run the following code to create 3 sample tables:  
+Now that we have our physical storage in place is time to create our logical volume and tables backed by the data in ADLS.
+
+Open/create a **Databricks Notebook** (PySpark) and run the following code in order:
+
+
 
 
