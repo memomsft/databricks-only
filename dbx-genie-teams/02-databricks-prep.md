@@ -45,6 +45,22 @@ Let's create a new folder and upload the csv files accordingly
 ![Prep](img/genie-prep1.png)
 ![Prep](img/genie-prep2.png)
 
+**Important**
+Before we can create tables backed by physical storage, we first need to make sure Databricks has access to the underlying cloud storage. This is done through two key constructs in Unity Catalog: **credentials and external locations**.
+
+🔑[Credential](https://learn.microsoft.com/en-us/azure/databricks/connect/unity-catalog/cloud-storage/storage-credentials) → Think of it as a badge. It defines how Databricks authenticates to cloud storage (for example, using a managed identity).
+
+📂[External Location](https://learn.microsoft.com/en-us/azure/databricks/connect/unity-catalog/cloud-storage/external-locations) → Think of it as the door. It represents a specific storage path (like a container or folder) that can be opened using that badge.
+
+**Unity Catalog** then manages these mappings centrally, so you always know which badges open which doors and who is allowed to use them.
+
+![Prep](img/genie-prep3.png)
+
+
+
+
+✅ In short: Credentials give Databricks the right to access storage, external locations specify exactly where, and Unity Catalog governs the relationship. For more information, please visit the Databricks docs.
+
 
 ## 🛠️ Step 3 – Create Base Tables
 
