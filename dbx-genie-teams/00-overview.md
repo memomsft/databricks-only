@@ -21,15 +21,15 @@ This integration helps bridge the gap between **data platforms** and **collabora
 ---
 
 ## 🛠️ What This Repository Covers
-This repo provides a **step-by-step, end-to-end implementation** of Genie + Teams integration, broken into three parts:  
+This repo provides a **step-by-step, end-to-end implementation** of Genie + Teams integration based on a Pharma escenario, broken into three parts:  
 
 1. **Databricks Prep**  
-   - Create and populate dummy tables (e.g., customers, orders, products).  
+   - Create and populate dummy tables (e.g., sensors, shipments, readings).  
    - Simulate real-time updates to demonstrate Genie’s query capabilities.  
 
 2. **Genie API Setup**  
-   - Expose Genie through a middleware API (based on [Ryan Bates’ guide](https://medium.com/@ryan-bates/microsoft-teams-meets-databricks-genie-api-a-complete-setup-guide-81f629ace634)).  
-   - Connect Genie’s query engine to downstream apps.  
+   - Create and expose Genie conversation API through a middleware (App Service and Azure Bot) (based on [Ryan Bates’ guide](https://medium.com/@ryan-bates/microsoft-teams-meets-databricks-genie-api-a-complete-setup-guide-81f629ace634)).  
+   - Connect Genie’s to downstream apps.  
 
 3. **Azure Bot + Teams Integration**  
    - Build and deploy an Azure Bot connected to Genie API.  
@@ -38,11 +38,31 @@ This repo provides a **step-by-step, end-to-end implementation** of Genie + Team
 
 ---
 
-## 🚀 End-to-End Flow
-1. **Databricks Genie** → answers queries on Lakehouse data.  
-2. **Middleware on Azure App Service** → connects Genie API to Teams.  
-3. **Azure Bot** → handles Teams conversations and routes them to Genie.  
-4. **Microsoft Teams** → provides the interface for end-users.  
+## 🚀 End-to-End Flow (Architecture)
+
+1. **User in Microsoft Teams**  
+   - Initiates a natural language query in Teams.
+
+2. **Azure Bot Service**  
+   - Receives the message (`/api/messages`).  
+   - Routes it to the backend service hosted on Azure App Service.
+
+3. **Middleware / Backend Service**  
+   - Python (or Node.js) app hosted on Azure App Service.  
+   - Handles authentication (Azure AD, Key Vault).  
+   - Forwards the query to **Databricks Genie API**.
+
+4. **Databricks Genie & Lakehouse**  
+   - Genie translates the natural language question into SQL/Spark.  
+   - Executes against Lakehouse tables (Delta, MLflow, Kafka, etc.).  
+   - Returns structured results.
+
+5. **Response Back to Teams**  
+   - Results are sent from Genie → backend → Azure Bot → Microsoft Teams.  
+   - User sees the answer inline in their Teams conversation.
+  
+
+![Architecture](img/architecture.png)
 
 ---
 
