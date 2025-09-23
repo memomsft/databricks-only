@@ -1,12 +1,11 @@
 <p align="center">
-  <img src="assets/fabric.png" alt="Fabric" width="90"/>
+  <img src="assets/dbx-logo.png" alt="Fabric" width="130"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="assets/snow1.png" alt="Snowflake" width="135"/>
 </p>
 
 
 
-# Databricks workshops
+# Databricks Workshops
 
 This repository collects multiple end-to-end integration and specific scenarios for Azure Databricks.
 
