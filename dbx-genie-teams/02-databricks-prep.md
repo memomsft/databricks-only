@@ -35,10 +35,16 @@ READINGS (`READING_TS, SENSOR_ID, TEMPERATURE, HUMIDITY, GPS_LAT, GPS_LON`) temp
 “Which routes show the highest number of alerts in the last week?”
 
 ## 🛠️ Step 1 – Upload sample files into a Databricks Volume
-In order to create the neccesary tables for this workshop we need to upload the csv files contained in this repo `/dbx-genie-teams/files` into our Databricks environment. For this exercise we will leverage [Databricks Volumes](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-volumes)that are logical volumes of storage pointing to a cloud storage location where we can store and access files in any format
+In order to create the neccesary tables for this workshop we need to upload the csv files contained in this repo `/dbx-genie-teams/files` into our Databricks environment. For this exercise we will leverage [Databricks Volumes](https://learn.microsoft.com/en-us/azure/databricks/sql/language-manual/sql-ref-volumes) that are logical volumes of storage pointing to a cloud storage location where we can store and access files in any format. For more details on how to work with volumnes check the Databricks docs.
+
+## 🛠️ Step 2 – Create a dedicated volume storage location in ADLS Gen2 for our files
+For storing our files we leverage an existing ADLS Gen2 account who serve as a container for Databricks external objects. In this storage account we are creating a container `vol` who is going to act as the physical location for the logical volume.
+
+Let's create a new folder and upload the csv files accordingly
 
 
-## 🛠️ Step 2 – Create Base Tables
+
+## 🛠️ Step 3 – Create Base Tables
 
 Open a **Databricks Notebook** (Python or PySpark) and run the following code to create 3 sample tables:  
 
