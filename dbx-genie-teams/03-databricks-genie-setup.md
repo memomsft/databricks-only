@@ -66,9 +66,17 @@ The Instructions section defines how Genie should behave when interacting with y
 
 ## 🛠️ Step 4 – Test Genie Queries
 
-Try asking Genie questions directly in the Databricks workspace to validate setup:
+Try asking Genie questions directly in the Databricks workspace to validate setup. But to make this more realistic let's execute our streaming script first to start generating data while we ask questions in parallel.
+
+![Genie](img/genie-setup6.png) 
+
+
+- Let's ask some random questions and see the outputs.
 
 ```text
-"Explain the dataset?"
-"How many products have been embarked over the last 7 days?"
+"¿Cuál es la tendencia de humedad en las lecturas de los últimos 7 días?"  English ("What is the humidity trend in the readings from the last 7 days?")
+"Filtra los embarques con temperatura promedio mayor a 8 °C?"  English ("Filter the shipments with an average temperature greater than 8 °C.?")
+
+![Genie](img/genie-setup7.png) 
+![Genie](img/genie-setup8.png) 
 
