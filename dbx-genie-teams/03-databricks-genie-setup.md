@@ -9,7 +9,7 @@ This includes enabling the feature, creating a **Genie Space**, and connecting i
 
 1. Log into your **Databricks Workspace**.  
 2. From the left **sidebar**, click on **Genie**.  
-   - If you don’t see Genie, ensure your workspace is on a **Premium or Enterprise plan** and that your admin has **enabled Genie** in `Settings--> Advanced--> Other--> Partner-powered AI assistive features`.  
+   - If you don’t see Genie, ensure your workspace is on a **Premium or Enterprise plan** and that your Workspace admin has **enabled Genie** in `Settings--> Advanced--> Other--> Partner-powered AI assistive features`.  
 3. Confirm that your cluster or SQL Warehouse is running (serverless would be easier). Genie requires a compute resource to execute queries.  
 
 ---
