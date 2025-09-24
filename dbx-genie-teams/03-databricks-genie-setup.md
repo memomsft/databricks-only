@@ -85,7 +85,8 @@ Try asking Genie questions directly in the Databricks workspace to validate setu
 ![Genie](img/genie-setup8.png) 
 
 
-- Now that it works, let's stop our simulated streaming Notebook to avoid extra-consumption
+- Now that we have tested, let's stop our simulated streaming Notebook to avoid extra-consumption
 
-  
+
+> Continue to **[4. ](04-app_service_setup.md)**.
 
