@@ -17,6 +17,11 @@ In summary we need:
 2. Choose your subscription, region, and resource group name (e.g. `rg-genie-teams`).  
 3. All subsequent resources should be created in this same region.
 
+
+![Genie](img/genie-rg.png)
+
+---
+
 ### 4.1.2 App Service Plan  
 1. Create a resource → search **App Service Plan**.  
 2. Configure:
@@ -26,6 +31,8 @@ In summary we need:
    - Region matching the resource group  
    - Pricing Tier: start with **Basic B1**  
 3. Create the plan.
+
+---
 
 ### 4.1.3 Web App  
 1. Create a resource → **Web App**.  
