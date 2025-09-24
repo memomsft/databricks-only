@@ -113,6 +113,7 @@ In summary we need:
 ![Genie](img/genie-rg6.png)
 
 **Note**
+
 Genie Space ID can be found in the Genie UI under. We will need this value 
 
 ![Genie](img/genie-rg8.png)
