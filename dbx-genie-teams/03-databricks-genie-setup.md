@@ -21,7 +21,7 @@ A **Genie Space** is a governed container where you configure the datasets, cont
 1. In the Genie UI, click **+ New**.    
 2. Next step is **Connect your data**. Select the **Lakehouse tables** you created earlier in [Section 02](./02-databricks-prep.md):
    
-   Search your `<catalog>`.`<schema>` and select your tables: 
+3. Search your `<catalog>`.`<schema>` and select your tables: 
    - `readings`  
    - `sensors`  
    - `shipments`  
@@ -33,7 +33,7 @@ A **Genie Space** is a governed container where you configure the datasets, cont
 5. We can now start configuring some aspects of our Genie Space. For now let's give our Genie Space a new name, in the upper left select/click over the Genie Space default name (i.e New Space) and add the name of your preference
    We will name ours as `AI-BI Genie | Pharma`. We will focus on three settings for this exercise:  `Data`, `Instructions`, `Settings` that are located in the **Configure** menu (upper right side).
 
-![Genie](img/genie-setu1.png)
+![Genie](img/genie-setup1.png)
 
 ---
 
@@ -43,7 +43,7 @@ A **Genie Space** is a governed container where you configure the datasets, cont
 A Genie Space and its underlying LLM has only access to the data is given access to, in this case here we can see the tables we configured as context during the Genie Space creation but also we can add/remove/search data from Unity Catalog here.
 Let's leave our initial tables
 
-![Genie](img/genie-setu2.png)
+![Genie](img/genie-setup2.png)
 
 
 **Instructions**
@@ -51,7 +51,7 @@ The Instructions section defines how Genie should behave when interacting with y
 
 - `Text` → Used to give Genie natural language guidance, such as mapping business terms to tables, defining rules (e.g., temperature thresholds), or specifying response styles (e.g., always reply in Spanish/English). In my case I wanted to test this for     Spanish speaking language so I instructed Genie to reply in Spanish always, you can customize it as needed
 
-![Genie](img/genie-setu3.png) 
+![Genie](img/genie-setup3.png) 
 
 - `Joins` → Defines the relationships between tables (e.g., shipments → sensors → readings) so Genie knows how to combine data correctly when generating queries.
 
