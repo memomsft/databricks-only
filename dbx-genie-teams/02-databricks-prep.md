@@ -100,6 +100,7 @@ LOCATION 'abfss://<containername>@<storageaccountname>.dfs.core.windows.net/';
 
 ![Prep](img/genie-prep5.png)
 
+---
 
 - Create shipments table
 
@@ -134,6 +135,8 @@ df = (spark.read
 
 ```
 
+---
+
 - Create sensors table
 
 ```python
@@ -163,6 +166,8 @@ df_sensors = (spark.read
    .mode("overwrite")  # replace if exists
    .saveAsTable("pharma_coldchain.sensors"))
 ```
+
+---
 
 - Create readings table. For this table we will create the table definition only (no data yet) as we will run a Python script later who is going to fill the table in chunks simulating an streaming process in real time, the idea is to execute this script   once we have our Genie Space created so we can start asking questions and Genie will get variances as the table is incrementally populated.
 
