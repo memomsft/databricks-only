@@ -88,5 +88,5 @@ Try asking Genie questions directly in the Databricks workspace to validate setu
 - Now that we have tested, let's stop our simulated streaming Notebook to avoid extra-consumption
 
 
-> Continue to **[4. App Service Setup](04-app_service_azurebot-setup.md)**
+> Continue to **[4. App Service + Azure Bot Setup](04-app_service_azurebot-setup.md)**
 
