@@ -93,10 +93,11 @@ In summary we need:
 
 ### 4.2.2 Configure Bot Messaging Endpoint  
 1. In the new Azure Bot resource go to the side bar → **Configuration** → Messaging Endpoint  
-2. Set it to: (this can be checked also from the web app resource --> overview menu --> default domain )
-
+2. Set it to:
+   
    `https://<your-webapp-name>.azurewebsites.net/api/messages`
-
+   
+Above can be checked also from the web app resource --> overview menu --> default domain 
 4. Save.
 
 ![Genie](img/genie-rg7.png)
