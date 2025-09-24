@@ -97,7 +97,9 @@ LOCATION 'abfss://<containername>@<storageaccountname>.dfs.core.windows.net/';
 
 - Now with these logical objects created in our catalog let's create our logical tables and populate them with the content from the csv files in the external volume (that points to the external location with csv files). Make sure you provide the filepath for your csv file. This can be obtained by clicking on each file --> `Copy volume file path` within the volume
 
+
 ![Prep](img/genie-prep5.png)
+
 
 - Create shipments table
 
