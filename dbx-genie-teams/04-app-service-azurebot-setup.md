@@ -26,11 +26,13 @@ In summary we need:
 1. Create a resource → search **App Service Plan**.  
 2. Configure:
    - Subscription & Resource Group  
-   - Name (e.g. `asp-genie-teams`)  
+   - Name (e.g. `app-service-dbx`)  
    - **Linux** as OS  
-   - Region matching the resource group  
+   - Region matching the other resources in Resource Group (I chose Canada Central due to quota constraints)
    - Pricing Tier: start with **Basic B1**  
 3. Create the plan.
+
+![Genie](img/genie-rg1.png)
 
 ---
 
