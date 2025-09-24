@@ -55,11 +55,11 @@ The Instructions section defines how Genie should behave when interacting with y
 
 - `Joins` → Defines the relationships between tables (e.g., shipments → sensors → readings) so Genie knows how to combine data correctly when generating queries.
 
-![Genie](img/genie-setu4.png) 
+![Genie](img/genie-setup4.png) 
 
 - `SQL Queries` → Provides example query patterns or reusable logic that Genie can follow, ensuring consistency and alignment with business rules when answering questions.
 
-![Genie](img/genie-setu5.png) 
+![Genie](img/genie-setup5.png) 
 
 
 ---
