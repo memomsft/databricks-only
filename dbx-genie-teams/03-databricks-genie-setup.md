@@ -20,11 +20,13 @@ A **Genie Space** is a governed container where you configure the datasets, cont
 
 1. In the Genie UI, click **+ New**.    
 2. Next step is **Connect your data**. Select the **Lakehouse tables** you created earlier in [Section 02](./02-databricks-prep.md):
+   
    Search your `<catalog>`.`<schema>` and select your tables: 
    - `readings`  
    - `sensors`  
    - `shipments`  
 4. Click **Create**
+
 
 ![Genie](/img/genie-setup1.png)
 
