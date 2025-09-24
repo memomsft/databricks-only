@@ -76,6 +76,8 @@ Try asking Genie questions directly in the Databricks workspace to validate setu
 ```text
 "¿Cuál es la tendencia de humedad en las lecturas de los últimos 7 días?"  English ("What is the humidity trend in the readings from the last 7 days?")
 "Filtra los embarques con temperatura promedio mayor a 8 °C?"  English ("Filter the shipments with an average temperature greater than 8 °C.?")
+```
+
 
 ![Genie](img/genie-setup7.png) 
 ![Genie](img/genie-setup8.png) 
