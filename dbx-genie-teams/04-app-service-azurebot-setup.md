@@ -65,8 +65,8 @@ In summary we need:
 7. Now go to the side bar --> **Settings → Environment values** and add the following variables:
    
    - **Environment Variables**:
-     - `SCM_DO_BUILD_DURING_DEPLOYMENT = True`
-     - `WEBSITE_HTTPLOGGING_RETENTION_DAYS = 3`
+     - `SCM_DO_BUILD_DURING_DEPLOYMENT = True`  (will take care of build/install dependencies during deployment)
+     - `WEBSITE_HTTPLOGGING_RETENTION_DAYS = 3` (log retention for 3 days)
      - 
 9. Save changes.
 
