@@ -88,5 +88,5 @@ Try asking Genie questions directly in the Databricks workspace to validate setu
 - Now that we have tested, let's stop our simulated streaming Notebook to avoid extra-consumption
 
 
-> Continue to **[4. ](04-app_service_setup.md)**.
+> Continue to **[4. (04-app_service_setup.md)]**.
 
