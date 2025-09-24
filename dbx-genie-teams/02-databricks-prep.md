@@ -99,6 +99,8 @@ LOCATION 'abfss://<containername>@<storageaccountname>.dfs.core.windows.net/';
 
 ![Prep](img/genie-prep5.png)
 
+- Create shipments table
+
 ```python
 # Shipments table
 
@@ -118,15 +120,63 @@ df = (spark.read
       .format("csv")
       .option("header", "true")
       .schema(shipment_schema)
-      .load("/Volumes/<catalog>/<schema>/<volname>/shipments.csv"))  #replace with your path
+      .load("/Volumes/<catalog>/<schema>/<volume_name>/shipments.csv"))  #replace with your volume path
 
 #display(df)
 
-# Overwrite if exists
+# Create the delta table
 (df.write
    .format("delta")
-   .mode("overwrite")
+   .mode("overwrite") # replace if exists
    .saveAsTable("pharma_coldchain.shipments"))
 
 ```
 
+- Create sensors table
+
+```python
+#Sensors table
+
+from pyspark.sql.types import StructType, StructField, IntegerType, StringType
+
+# 1. Define sensor schema
+sensors_schema = StructType([
+    StructField("SENSOR_ID", IntegerType(), True),
+    StructField("SHIPMENT_ID", IntegerType(), True),
+    StructField("POSITION", StringType(), True)
+])
+
+# 2. Read CSV with the schema definition 
+df_sensors = (spark.read
+              .format("csv")
+              .option("header", "true")
+              .schema(sensors_schema)
+              .load("/Volumes/<catalog>/<schema>/<volume_name>/sensors.csv")) #replace with your volume path
+
+#display(df_sensors)
+
+# 3. Create the delta table
+(df_sensors.write
+   .format("delta")
+   .mode("overwrite")  # replace if exists
+   .saveAsTable("pharma_coldchain.sensors"))
+```
+
+- Create readings table. For this table we will create the table definition only (no data yet) as we will run a Python script later who is going to fill the table in chunks simulating an streaming process in real time, the idea is to execute this script   once we have our Genie Space created so we can start asking questions and Genie will get variances as the table is incrementally populated.
+
+```sql
+%sql
+-- Readings table (empty to start streaming simulation)
+CREATE OR REPLACE TABLE  pharma_coldchain.readings (
+  READING_TS TIMESTAMP,
+  SENSOR_ID INT,
+  TEMPERATURE DOUBLE,
+  HUMIDITY DOUBLE,
+  GPS_LAT DOUBLE,
+  GPS_LON DOUBLE
+) USING DELTA;
+```
+
+We can validate our objects are created in the Databricks Catalog Explorer
+
+![Prep](img/genie-prep6.png)
