@@ -72,8 +72,26 @@ You can manage these constructs in the Databricks Workspace (Catalog Explorer). 
 
 Now that we have our physical storage in place is time to create our logical volume and tables backed by the data in ADLS.
 
-Open/create a **Databricks Notebook** (PySpark) and run the following code in order:
+Open/create a **Databricks Notebook** (PySpark & SparkSQL) and run the following code in order:
 
+**Note** You can use the default/existing catalog or create another one. In this case we are using an existing catalog named `dbx_west_ext`. Also, **replace** the placeholders with your storage values.
 
+- Create a schema in the target catalog
+
+  ```sql
+  %sql
+-- Create schema
+USE CATALOG dbx_west_ext;
+CREATE SCHEMA IF NOT EXISTS pharma_coldchain
+COMMENT 'Coldchain monitoring';
+```
+
+- Create an external volume within the `catalog.schema`
+
+```sql
+%sql
+CREATE EXTERNAL VOLUME dbx_west_ext.pharma_coldchain.vol
+LOCATION 'abfss://`<containername>`@`<storageaccountname>`.dfs.core.windows.net/';
+```
 
 
