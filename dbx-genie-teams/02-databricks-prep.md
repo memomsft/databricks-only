@@ -142,8 +142,6 @@ df = (spark.read
 ```python
 #Sensors table
 
-from pyspark.sql.types import StructType, StructField, IntegerType, StringType
-
 # 1. Define sensor schema
 sensors_schema = StructType([
     StructField("SENSOR_ID", IntegerType(), True),
