@@ -29,7 +29,7 @@ In summary we need:
    - Name (e.g. `app-service-dbx`)  
    - **Linux** as OS  
    - Region matching the other resources in Resource Group (I chose Canada Central due to quota constraints)
-   - Pricing Tier: start with **Basic B1**  
+   - Pricing Tier: start with **Basic B1** or anyone available in your subscription (F1 might work too) 
 3. Create the plan.
 
 ![Genie](img/genie-rg1.png)
@@ -40,19 +40,35 @@ In summary we need:
 1. Create a resource → **Web App**.  
 2. Configure:
    - Subscription & Resource Group  
-   - Name (e.g. `webapp-genie-bot`)  
-   - Publish: **Code**  
-   - Runtime stack: **Python (3.x)**  
-   - Region: same region  
-3. In **Settings → Configuration**:
+   - Name (e.g. `web-app-dbxx`)  
+   - Publish: **Code**
+   - Uncheck `Secure unique default hostname on`
+   - Runtime stack: **Python (3.13)**  
+   - Region: same region as the App Service Plan
+   - Pricing Plan: Choose your newly created App Service Plan
+3. Click **Review + create**
+
+![Genie](img/genie-rg2.png)
+   
+4. Open the Web App resource and go to the side bar --> **Settings → Configuration**:
+5. Add the following configs
+   
    - **Startup Command**:  
      ```
      python3 -m aiohttp.web -H 0.0.0.0 -P 8000 app:init_func
      ```
+7. Save changes.
+
+![Genie](img/genie-rg3.png)
+
+   
+8. Now go to the side bar --> **Settings → Environment values** and add the following variables
    - **Environment Variables**:
      - `SCM_DO_BUILD_DURING_DEPLOYMENT = True`
      - `WEBSITE_HTTPLOGGING_RETENTION_DAYS = 3`
-4. Save changes.
+9. Save changes.
+
+![Genie](img/genie-rg4.png)
 
 ---
 
