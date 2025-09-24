@@ -76,17 +76,17 @@ Open/create a **Databricks Notebook** (PySpark & SparkSQL) and run the following
 
 **Note** You can use the default/existing catalog or create another one. In this case we are using an existing catalog named `dbx_west_ext`. Also, **replace** the placeholders with your storage values.
 
-- Create a schema in the target catalog
+- Create a schema named `pharma_coldchain` in the target catalog `dbx_west_ext`
 
 ```sql
   %sql
--- Create schema
+-- Create schema 
 USE CATALOG dbx_west_ext;
 CREATE SCHEMA IF NOT EXISTS pharma_coldchain
 COMMENT 'Coldchain monitoring';
 
 ```
-- Create an external volume within the `catalog.schema`
+- Create an external volume named `vol` within the `catalog.schema` backed by one of our external locations
 
 ```sql
 %sql
@@ -95,4 +95,38 @@ LOCATION 'abfss://<containername>@<storageaccountname>.dfs.core.windows.net/';
 
 ```
 
+- Now with these logical objects created in our catalog let's create our logical tables and populate them with the content from the csv files in the external volume (that points to the external location with csv files). Make sure you provide the filepath for your csv file. This can be obtained by clicking on each file --> `Copy volume file path` within the volume
+
+![Prep](img/genie-prep5.png)
+
+```python
+# Shipments table
+
+from pyspark.sql.types import StructType, StructField, IntegerType, StringType
+
+# 1. Define an explicit schema
+shipment_schema = StructType([
+    StructField("SHIPMENT_ID", IntegerType(), True),
+    StructField("PRODUCT", StringType(), True),
+    StructField("ROUTE", StringType(), True),
+    StructField("ORIGIN", StringType(), True),
+    StructField("DESTINATION", StringType(), True)
+])
+
+# 2. Read CSV with the schema definition 
+df = (spark.read
+      .format("csv")
+      .option("header", "true")
+      .schema(shipment_schema)
+      .load("/Volumes/<catalog>/<schema>/<volname>/shipments.csv"))  #replace with your path
+
+#display(df)
+
+# Overwrite if exists
+(df.write
+   .format("delta")
+   .mode("overwrite")
+   .saveAsTable("pharma_coldchain.shipments"))
+
+```
 
