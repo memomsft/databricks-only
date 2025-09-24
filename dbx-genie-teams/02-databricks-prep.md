@@ -91,7 +91,7 @@ COMMENT 'Coldchain monitoring';
 ```sql
 %sql
 CREATE EXTERNAL VOLUME dbx_west_ext.pharma_coldchain.vol
-LOCATION 'abfss://`<containername>`@`<storageaccountname>`.dfs.core.windows.net/';
+LOCATION 'abfss://<containername>@<storageaccountname>.dfs.core.windows.net/';
 ```
 
 
