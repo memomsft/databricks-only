@@ -69,5 +69,6 @@ The Instructions section defines how Genie should behave when interacting with y
 Try asking Genie questions directly in the Databricks workspace to validate setup:
 
 ```text
-"How many customers are there by region?"
+"Explain the dataset?"
+"How many products have been embarked over the last 7 days?"
 
