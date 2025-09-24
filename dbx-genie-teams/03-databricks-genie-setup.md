@@ -84,3 +84,8 @@ Try asking Genie questions directly in the Databricks workspace to validate setu
 ![Genie](img/genie-setup7.png) 
 ![Genie](img/genie-setup8.png) 
 
+
+- Now that it works, let's stop our simulated streaming Notebook to avoid extra-consumption
+
+  
+
