@@ -31,3 +31,4 @@ You’ll need an active **Azure Subscription** with the following resources:
 
 ⚡ With these prerequisites in place, you’ll be ready to set up the integration end-to-end.
 
+> Continue to **[2. Databricks Prep Work](02-databricks-prep.md)**.
