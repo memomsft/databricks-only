@@ -74,3 +74,6 @@ This repo provides a **step-by-step, end-to-end implementation** of Genie + Team
 ---
 
 ⚡ By the end of this guide, you’ll have a **fully working Teams bot powered by Databricks Genie**, ready to query your Lakehouse data in natural language.
+
+
+> Continue to **[01. Prerequisites](01-prerequisites.md)**.
