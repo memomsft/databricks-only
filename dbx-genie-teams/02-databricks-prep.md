@@ -80,11 +80,12 @@ Open/create a **Databricks Notebook** (PySpark & SparkSQL) and run the following
 
   ```sql
   
-  %sql
+%sql
 -- Create schema
 USE CATALOG dbx_west_ext;
 CREATE SCHEMA IF NOT EXISTS pharma_coldchain
 COMMENT 'Coldchain monitoring';
+
 ```
 
 - Create an external volume within the `catalog.schema`
