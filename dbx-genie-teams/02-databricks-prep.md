@@ -264,3 +264,5 @@ while start < total_rows:
 print("✅ Streaming simulation completed.")
 
 ```
+
+> Continue to **[3. Databricks Genie Setup](03-databricks-genie-setup.md)**.
