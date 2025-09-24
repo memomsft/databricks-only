@@ -99,7 +99,7 @@ In summary we need:
    
 4. Save.
 
-![Genie](img/genie-rg6.png)
+![Genie](img/genie-rg7.png)
 
 ---
 
@@ -110,7 +110,7 @@ In summary we need:
 2. Under **“Manage Password” / “Client secrets”** → generate a **new client secret**  
 3. Save (store securely with Genie Space ID, App ID, Tenant ID)
 
-![Genie](img/genie-rg7.png)
+![Genie](img/genie-rg6.png)
 
 **Note**
 Genie Space ID can be found in the Genie UI under. We will need this value 
