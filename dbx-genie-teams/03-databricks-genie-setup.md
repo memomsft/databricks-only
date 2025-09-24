@@ -28,7 +28,7 @@ A **Genie Space** is a governed container where you configure the datasets, cont
 4. Click **Create**
 
 
-![Genie](/img/genie-setup.png)
+![Genie](img/genie-setup.png)
 
 ---
 
