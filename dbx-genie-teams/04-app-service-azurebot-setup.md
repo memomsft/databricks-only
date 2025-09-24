@@ -98,6 +98,7 @@ In summary we need:
    `https://<your-webapp-name>.azurewebsites.net/api/messages`
    
 Above can be checked also from the web app resource --> overview menu --> default domain 
+
 4. Save.
 
 ![Genie](img/genie-rg7.png)
