@@ -192,7 +192,7 @@ We can validate our objects are created in the Databricks Catalog Explorer
 
 Since we want to simulate "real-time" data ingestion for our`readings` table then we need to prepare a Notebook that **TRUNCATES** the table first to ensure we wipe the table content and start fresh, then we will read our `readings_large.csv` file from our logical volume and persist the data in chunks simulating an streaming process.
 
-**Note:** We can run this to validate the execution and check our table, but the idea is to execute this at the same time we are interacting with our Genie Space to simulate a business user interacting with Genie and "live" data
+**Note:** We can run this to validate the execution and check our table, but the idea is to re-run this each time we are demoing this to simulate a business user interacting with Genie and "live" data
 
 Create a **Databricks Notebook** (PySpark & SparkSQL) and run the following code in order:
 
