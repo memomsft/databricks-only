@@ -86,7 +86,7 @@ CREATE SCHEMA IF NOT EXISTS pharma_coldchain
 COMMENT 'Coldchain monitoring';
 
 ```
-- Create an external volume named `vol` within the `catalog.schema` backed by one of our external locations
+- Create an external volume named `vol` within the `<catalog>.<schema>` backed by one of our external locations
 
 ```sql
 %sql
