@@ -79,27 +79,45 @@ In summary we need:
 ### 4.2.1 Create Azure Bot Resource  
 1. Create a resource → **Azure Bot**.  
 2. Configure:
-   - Bot handle / name  
-   - Subscription & Resource Group  
-   - Region  
+   - Bot handle / name (i.e azure-bot-genie)
+   - Subscription & Resource Group (attach the existing ones)
+   - Data Residency: **Global**  
    - Pricing Plan: **Free** (for dev / POC)  
-   - **Single Tenant**  
-   - Create a new **Microsoft App ID**  
+   - Type of App: **Single Tenant**  
+   - Creation type: **Create a new Microsoft App ID**  (it will generate an App Registration)
+   - Service Management reference: Leave it blank
+  
+![Genie](img/genie-rg5.png)
+
+---
 
 ### 4.2.2 Configure Bot Messaging Endpoint  
-1. In the Azure Bot resource → **Configuration** → Messaging Endpoint  
+1. In the new Azure Bot resource go to the side bar → **Configuration** → Messaging Endpoint  
 2. Set it to:
 
    `https://<your-webapp-name>.azurewebsites.net/api/messages`
    
 4. Save.
 
+![Genie](img/genie-rg6.png)
+
+---
+
 ### 4.2.3 Copy IDs & Create Secret  
 1. Under Bot settings, get:
 - **Microsoft App ID**  
 - **Tenant ID**  
-2. Under “Manage Password” / “Client secrets” → generate a **new client secret**  
+2. Under **“Manage Password” / “Client secrets”** → generate a **new client secret**  
 3. Save (store securely with Genie Space ID, App ID, Tenant ID)
+
+![Genie](img/genie-rg7.png)
+
+**Note**
+Genie Space ID can be found in the Genie UI under. We will need this value 
+
+![Genie](img/genie-rg8.png)
+
+---
 
 ### 4.2.4 Enable Teams Channel  
 1. Go to **Channels** in Bot resource  
