@@ -57,15 +57,17 @@ In summary we need:
      ```
      python3 -m aiohttp.web -H 0.0.0.0 -P 8000 app:init_func
      ```
-7. Save changes.
+6. Save changes.
 
 ![Genie](img/genie-rg3.png)
 
    
-8. Now go to the side bar --> **Settings → Environment values** and add the following variables
+7. Now go to the side bar --> **Settings → Environment values** and add the following variables:
+   
    - **Environment Variables**:
      - `SCM_DO_BUILD_DURING_DEPLOYMENT = True`
      - `WEBSITE_HTTPLOGGING_RETENTION_DAYS = 3`
+     - 
 9. Save changes.
 
 ![Genie](img/genie-rg4.png)
