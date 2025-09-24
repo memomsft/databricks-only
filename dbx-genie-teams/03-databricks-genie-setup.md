@@ -30,19 +30,37 @@ A **Genie Space** is a governed container where you configure the datasets, cont
 
 ![Genie](img/genie-setup.png)
 
+5. We can now start configuring some aspects of our Genie Space. For now let's give our Genie Space a new name, in the upper left select/click over the Genie Space default name (i.e New Space) and add the name of your preference
+   We will name ours as `AI-BI Genie | Pharma`. We will focus on three settings for this exercise:  `Data`, `Instructions`, `Settings` that are located in the **Configure** menu (upper right side).
+
+![Genie](img/genie-setu1.png)
+
 ---
 
 ## 🛠️ Step 3 – Configure Genie Context
 
-To improve responses, add **context and sample prompts** in the Genie space settings:  
+**Data**
+A Genie Space and its underlying LLM has only access to the data is given access to, in this case here we can see the tables we configured as context during the Genie Space creation but also we can add/remove/search data from Unity Catalog here.
+Let's leave our initial tables
 
-- Example context:  
-  > "This space contains sales orders, customers, and products for a fictional retail company."  
+![Genie](img/genie-setu2.png)
 
-- Example prompts to test:  
-  - *"Show me the total revenue by product category."*  
-  - *"List all pending orders by region."*  
-  - *"Which customer generated the highest sales?"*  
+
+**Instructions**
+The Instructions section defines how Genie should behave when interacting with your data. It has three complementary parts:
+
+- `Text` → Used to give Genie natural language guidance, such as mapping business terms to tables, defining rules (e.g., temperature thresholds), or specifying response styles (e.g., always reply in Spanish/English). In my case I wanted to test this for     Spanish speaking language so I instructed Genie to reply in Spanish always, you can customize it as needed
+
+![Genie](img/genie-setu3.png) 
+
+- `Joins` → Defines the relationships between tables (e.g., shipments → sensors → readings) so Genie knows how to combine data correctly when generating queries.
+
+![Genie](img/genie-setu4.png) 
+
+- `SQL Queries` → Provides example query patterns or reusable logic that Genie can follow, ensuring consistency and alignment with business rules when answering questions.
+
+![Genie](img/genie-setu5.png) 
+
 
 ---
 
