@@ -79,6 +79,7 @@ Open/create a **Databricks Notebook** (PySpark & SparkSQL) and run the following
 - Create a schema in the target catalog
 
   ```sql
+  
   %sql
 -- Create schema
 USE CATALOG dbx_west_ext;
@@ -89,9 +90,11 @@ COMMENT 'Coldchain monitoring';
 - Create an external volume within the `catalog.schema`
 
 ```sql
+
 %sql
 CREATE EXTERNAL VOLUME dbx_west_ext.pharma_coldchain.vol
 LOCATION 'abfss://<containername>@<storageaccountname>.dfs.core.windows.net/';
+
 ```
 
 
