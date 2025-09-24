@@ -190,7 +190,7 @@ We can validate our objects are created in the Databricks Catalog Explorer
 
 ## 🛠️ Step 4 – Streaming Notebook
 
-As we want to simulate "real-time" data ingestion our`readings` table we need to prepare a Notebook that **TRUNCATEs** the table first to ensure we wipe table content and start fresh, then we are going to read our `readings_large.csv` file from our logical volume and persist the data in chunks simulating an streaming process.
+As we want to simulate "real-time" data ingestion for our`readings` table then we need to prepare a Notebook that **TRUNCATEs** the table first to ensure we wipe table content and start fresh, then we are going to read our `readings_large.csv` file from our logical volume and persist the data in chunks simulating an streaming process.
 
 Create a **Databricks Notebook** (PySpark & SparkSQL) and run the following code in order:
 
