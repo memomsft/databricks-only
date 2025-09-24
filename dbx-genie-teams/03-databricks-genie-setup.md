@@ -40,6 +40,7 @@ A **Genie Space** is a governed container where you configure the datasets, cont
 ## 🛠️ Step 3 – Configure Genie Context
 
 **Data**
+
 A Genie Space and its underlying LLM has only access to the data is given access to, in this case here we can see the tables we configured as context during the Genie Space creation but also we can add/remove/search data from Unity Catalog here.
 Let's leave our initial tables
 
@@ -47,6 +48,7 @@ Let's leave our initial tables
 
 
 **Instructions**
+
 The Instructions section defines how Genie should behave when interacting with your data. It has three complementary parts:
 
 - `Text` → Used to give Genie natural language guidance, such as mapping business terms to tables, defining rules (e.g., temperature thresholds), or specifying response styles (e.g., always reply in Spanish/English). In my case I wanted to test this for     Spanish speaking language so I instructed Genie to reply in Spanish always, you can customize it as needed
