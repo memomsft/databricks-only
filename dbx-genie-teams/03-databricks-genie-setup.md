@@ -16,15 +16,17 @@ This includes enabling the feature, creating a **Genie Space**, and connecting i
 
 ## 🛠️ Step 2 – Create a Genie Space
 
-A **Genie Space** is a container for datasets, context, and personas Genie can interact with.
+A **Genie Space** is a governed container where you configure the datasets, context, and personas that Genie can use to interact with data and provide insights.
 
-1. In the Genie UI, click **Create new space**.  
-2. Enter a name, e.g. `Genie-Teams-Demo`.  
-3. Select the **Lakehouse tables** you created earlier in [Section 02](./02-databricks-prep.md):  
-   - `genie_customers`  
-   - `genie_orders`  
-   - `genie_products`  
-4. Save the space.
+1. In the Genie UI, click **+ New**.    
+2. Next step is **Connect your data**. Select the **Lakehouse tables** you created earlier in [Section 02](./02-databricks-prep.md):
+   Search your `<catalog>`.`<schema>` and select your tables: 
+   - `readings`  
+   - `sensors`  
+   - `shipments`  
+4. Click **Create**
+
+![Genie](/img/genie-setup1.png)
 
 ---
 
