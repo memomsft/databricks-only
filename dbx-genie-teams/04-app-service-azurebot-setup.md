@@ -148,7 +148,8 @@ For this exercise we will use the code that Luiz Carrossoni Neto wrote — his G
 - **Databricks Host**   - Can get it from Databricks UI
 - **Databricks Access Token** - Can get from Databricks UI
 
-**Note**: To get a Databricks token, head to your **Databricks Workspace --> Settings --> User --> Developer --> Access Token --> Manage -> Generate new token**
+**Note**
+To get a Databricks token, head to your **Databricks Workspace --> Settings --> User --> Developer --> Access Token --> Manage -> Generate new token**
 
 3. Save the **config.py** file
 
