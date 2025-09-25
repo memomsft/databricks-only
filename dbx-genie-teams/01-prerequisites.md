@@ -18,7 +18,7 @@ You’ll need an active **Azure Subscription** with the following resources:
 - **Web App** → where the backend (Python/Node.js) will be deployed.  
 - **Azure Bot resource** → to register and configure the Teams bot.  
 - **Azure Active Directory App Registration** → for bot authentication and API permissions.  
-- **Azure Key Vault** *(optional but recommended)* → to securely store Genie API keys, client secrets, and connection strings.  
+- **Azure Key Vault** *(optional but recommended)* → to securely store Genie ID, DBX Tokens, client secrets, and connection strings.  
 
 ---
 
