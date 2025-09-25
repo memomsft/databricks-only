@@ -7,7 +7,7 @@ This guide explains how to package your Azure Bot as a **Teams app**, upload it 
 ## 5.1 Requirements (Teams & Tenant)
 
 - A **Microsoft 365 tenant** where we can upload custom apps. We are using a Contoso Tenant (special) for this purpose 
-- **Teams custom app upload** must be allowed. In **[Teams admin center](https://admin.teams.microsoft.com/)**:  
+- **Teams custom app upload** must be allowed. Head to **[Teams admin center](https://admin.teams.microsoft.com/)**:  
   `Teams apps → Setup policies → Add a policy → Upload custom apps = On` (we will attach our bot to this policy later)
 
 ![Genie](img/teams1.png)
@@ -22,72 +22,33 @@ This guide explains how to package your Azure Bot as a **Teams app**, upload it 
 
 ---
 
-## 5.2 Gather Assets
 
-- **Bot App ID** (from Azure Bot → *Configuration*). :contentReference[oaicite:5]{index=5}  
-- **Two icons** in PNG:
-  - `color.png` (192×192, full-color)  
-  - `outline.png` (32×32, transparent outline)  
-  These are required for packaging and store readiness. :contentReference[oaicite:6]{index=6}
-- **Valid domain** of your backend, e.g. `your-webapp.azurewebsites.net`, for `validDomains` in the manifest. :contentReference[oaicite:7]{index=7}
+## 5.2 Create the Teams App Manifest
 
----
+- For the next step we would now need to create a manifest file, there are multiple ways to create a manifest file, but for this example we will be using 
+  Kyle Hale’s manifest, which can be found in his repo here --> https://github.com/kthejoker/genie-teams-bot.git
+  Download the `genie-teams-app` folder from the repo, this template targets **Teams** and supports **personal, team, and group chat** scopes.
 
-## 5.3 Create the Teams App Manifest
+**Note**
 
-Create `manifest.json` in a folder with your two icons. This template targets **Teams** and supports **personal, team, and group chat** scopes.
+- The folder also contains two files: color.png and outline.png. These are the bot logos and can be replaced with your custom logos. Ensure they retain the same names (color.png and outline.png), or else the changes will not be reflected
 
-> Replace all `<>` placeholders. If you aren’t using Bot **SSO**, you may omit `webApplicationInfo`. :contentReference[oaicite:8]{index=8}
+![Genie](img/teams2.png)
 
-```json
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.13/MicrosoftTeams.schema.json",
-  "manifestVersion": "1.13",
-  "version": "1.0.0",
-  "id": "<NEW-GUID-FOR-THIS-TEAMS-APP>",
-  "packageName": "com.<yourorg>.genie",
-  "developer": {
-    "name": "<Your Organization>",
-    "websiteUrl": "https://<your-domain>",
-    "privacyUrl": "https://<your-domain>/privacy",
-    "termsOfUseUrl": "https://<your-domain>/terms"
-  },
-  "name": {
-    "short": "Genie Bot",
-    "full": "Databricks Genie for Teams"
-  },
-  "description": {
-    "short": "Ask data questions in natural language.",
-    "full": "A Microsoft Teams bot that forwards your questions to Databricks Genie and returns answers from your Lakehouse."
-  },
-  "icons": {
-    "color": "color.png",
-    "outline": "outline.png"
-  },
-  "accentColor": "#FFFFFF",
-  "bots": [
-    {
-      "botId": "<MICROSOFT_APP_ID_OF_YOUR_AZURE_BOT>",
-      "scopes": [ "personal", "team", "groupchat" ],
-      "supportsFiles": false,
-      "isNotificationOnly": false,
-      "commandLists": [
-        {
-          "scopes": [ "personal", "team", "groupchat" ],
-          "commands": [
-            { "title": "help", "description": "Show available commands" },
-            { "title": "genie <question>", "description": "Send a question to Databricks Genie" }
-          ]
-        }
-      ]
-    }
-  ],
-  "webApplicationInfo": {
-    "id": "<MICROSOFT_APP_ID_OF_YOUR_AZURE_BOT>",
-    "resource": "api://botid-<MICROSOFT_APP_ID_OF_YOUR_AZURE_BOT>"
-  },
-  "validDomains": [
-    "<your-webapp-name>.azurewebsites.net"
-  ]
-}
 
+- Now in the editor of your choice clone the repo or open the downloaded `genie-teams-app` folder and navigate to the `manifest.json` file inside and replace the values in the keys **bots/botId** and **webApplicationInfo/id** with the Microsoft App ID from your Azure Bot resource
+
+![Genie](img/teams3.png)
+
+
+- After modyfying and save the `manifest.json` file we will need to create a new version of the manifest to upload it in Teams. So, open the terminal in your editor and navigate to the `genie-teams-app`folder and run the    following command (for windows users):
+
+  ```
+  Compress-Archive -Path * -DestinationPath genie-teams.zip
+  
+  ```
+
+  A new zip file will be created. Keep this file as we need to upload it into Teams
+
+![Genie](img/teams4.png)
+  
