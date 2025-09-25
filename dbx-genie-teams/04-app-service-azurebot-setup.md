@@ -166,6 +166,7 @@ To get a Databricks token, head to your **Databricks Workspace --> Settings --> 
 
    `az webapp up --name <your-webapp-name> --resource-group <rg-genie-teams> --plan <your-app-service-plan> --runtime "PYTHON:3.13" --sku B1`
 
+*If we change SKU or runtime of this app we will require to change the above command
 
 ![Genie](img/genie-rg11.png)  
 ![Genie](img/genie-rg12.png)  
