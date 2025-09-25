@@ -50,7 +50,7 @@ In summary we need:
 
 ![Genie](img/genie-rg2.png)
    
-4. Open the Web App resource and go to the side bar --> **Settings → Configuration**:
+4. Open the Web App resource and go to the sidebar --> **Settings → Configuration**:
 5. Add the following configs
    
    - **Startup Command**:  
@@ -62,7 +62,7 @@ In summary we need:
 ![Genie](img/genie-rg3.png)
 
    
-7. Now go to the side bar --> **Settings → Environment values** and add the following variables:
+7. Now go to the sidebar --> **Settings → Environment values** and add the following variables:
    
    - **Environment Variables**:
      - `SCM_DO_BUILD_DURING_DEPLOYMENT = True`  (will take care of build/install dependencies during deployment)
@@ -92,7 +92,7 @@ In summary we need:
 ---
 
 ### 4.2.2 Configure Bot Messaging Endpoint  
-1. In the new Azure Bot resource go to the side bar → **Configuration** → Messaging Endpoint  
+1. In the new Azure Bot resource go to the sidebar → **Configuration** → Messaging Endpoint  
 2. Set it to:
    
    `https://<your-webapp-name>.azurewebsites.net/api/messages`
@@ -123,18 +123,20 @@ Genie Space ID can be found in the Genie UI under. We will need this value
 ---
 
 ### 4.2.4 Enable Teams Channel  
-1. Go to **Channels** in Bot resource  
+1. Go to **Channels** in the sidebar of the Bot resource  
 2. Add **Microsoft Teams**  
 3. Accept any Terms of Service  
 4. Save changes
+
+ ![Genie](img/genie-rg9.png)  
 
 ---
 
 ## 4.3 Deploy the Middleware Application
 
 ### 4.3.1 Clone / Prepare the Bot Code  
-1. Clone the bot repository (or your own fork).
-We will use the code that Luiz Carrossoni Neto wrote — his GitHub repo is here — https://github.com/carrossoni/DatabricksGenieBOT
+1. Clone the bot repository with the neccesary code (or your own fork).
+For this exercise we will use the code that Luiz Carrossoni Neto wrote — his GitHub repo is here — https://github.com/carrossoni/DatabricksGenieBOT
 
 2. Edit configuration (e.g. `config.py` or `.env`will be better) to include the env variables:
    
