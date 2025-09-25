@@ -49,12 +49,12 @@ This repo provides a **step-by-step, end-to-end implementation** of Genie + Team
 
 3. **Middleware / Backend Service**  
    - Python (or Node.js) app hosted on Azure App Service.  
-   - Handles authentication (Azure AD, Key Vault).  
+   - Handles authentication (DBX Token, Azure AD, Key Vault).  
    - Forwards the query to **Databricks Genie API**.
 
 4. **Databricks Genie & Lakehouse**  
    - Genie translates the natural language question into SQL/Spark.  
-   - Executes against Lakehouse tables (Delta, MLflow, Kafka, etc.).  
+   - Executes against Lakehouse tables (Delta).  
    - Returns structured results.
 
 5. **Response Back to Teams**  
