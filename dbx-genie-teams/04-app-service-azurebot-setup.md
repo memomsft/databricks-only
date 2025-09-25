@@ -212,5 +212,6 @@ At the end of this section, you will have:
 - An Azure Bot registered and connected to that Web App  
 - The bot added as a Teams channel, ready to accept messages  
 
-Next up (Section 05): connecting the bot logic to Genie & Teams (handling messages, routing queries, etc.).  
+
+> Continue to **[5. (Optional) Integrate & Publish Bot in Microsoft Teams](05-publish-bot-teams.md)**
 
