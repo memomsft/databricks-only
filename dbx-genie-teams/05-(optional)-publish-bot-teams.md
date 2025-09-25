@@ -95,3 +95,16 @@ In this step we will upload the 'manifest' folder we generated to Teams, at this
 
 
   ![Genie](img/teams10.png)
+
+
+- In some minutes you will be able to interact with your App in Teams and start asking questions and Genie will provide us responses from our Databricks environment.
+
+
+   ![Genie](img/teams11.png)
+
+
+- If we goto Databricks we can see also that these questions and answers are actually recorded in the Genie Space for the requests that are coming from our Team's App
+
+  ![Genie](img/teams12.png)
+
+  With that we are demonstrating how using Genie on Teams makes data accessible without the need to log in to the Databricks workspace.
