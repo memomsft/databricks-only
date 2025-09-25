@@ -213,5 +213,5 @@ At the end of this section, you will have:
 - The bot added as a Teams channel, ready to accept messages  
 
 
-> Continue to **[5. (Optional) Integrate & Publish Bot in Microsoft Teams](05-publish-bot-teams.md)**
+> Continue to **[5. (Optional) Integrate & Publish Bot in Microsoft Teams](05-(optional)-publish-bot-teams.md)**
 
