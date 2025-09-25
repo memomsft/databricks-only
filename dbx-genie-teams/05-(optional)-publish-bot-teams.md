@@ -86,9 +86,8 @@ In this step we will upload the 'manifest' folder we generated to Teams, at this
 
 
 - Let's go back to the `Developer Portal` in the Teams client and search for our App again, click on `Distribute` and select `Publish to your organization`
-  The App will require an approval from Admin. If so, you can go again as `Admin` to **[Teams admin center](https://admin.teams.microsoft.com/)** then search the app in the sidebar → `Teams Apps → Manage Apps → Search the    new App  and approve the request accordingly.
 
-
+  
   ![Genie](img/teams9.png)
 
 
