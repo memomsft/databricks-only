@@ -183,12 +183,15 @@ To get a Databricks token, head to your **Databricks Workspace --> Settings --> 
 ## 4.4 Test the Bot & Teams Integration
 
 1. In the Azure Portal, open your Azure Bot resource → **Test in Web Chat**  
-- You should see a greeting like `Welcome to the Databricks Genie Bot!`  
+- You should see a greeting like `Welcome to the Databricks Genie Bot!`
+
+![Genie](img/genie-rg14.png)
+  
 2. In the same Bot resource → **Channels** → **Open in Teams**  
 - This will allow you to try the bot inside Teams  
-3. Confirm that messages sent in Teams are forwarded via the bot to your backend, and that the backend can call the Genie API and return responses  
-
-![Genie](img/genie-rg14.png)  
+3. Confirm that messages sent in Teams are forwarded via the bot to your backend, and that the backend can call the Genie API and return responses
+  
+![Genie](img/genie-rg15.png)  
 
 ---
 
