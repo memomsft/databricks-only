@@ -107,4 +107,12 @@ In this step we will upload the 'manifest' folder we generated to Teams, at this
 
   ![Genie](img/teams12.png)
 
-  With that we are demonstrating how using Genie on Teams makes data accessible without the need to log in to the Databricks workspace.
+With this setup, we’ve demonstrated how **Databricks Genie can be surfaced directly in Microsoft Teams**, making data accessible to everyone without requiring them to log into the Databricks workspace.  
+
+This integration transforms Teams into a **collaboration and analytics hub**, where users can:
+
+- Ask data questions in natural language.  
+- Receive real-time answers from Genie.  
+- Share insights instantly within their teams.  
+
+⚡ By combining **Databricks Genie** with **Azure Bot Service** and **Microsoft Teams**, organizations can bridge the gap between **data** and **collaboration**, empowering business users and technical teams alike.
