@@ -139,28 +139,40 @@ Genie Space ID can be found in the Genie UI under. We will need this value
 For this exercise we will use the code that Luiz Carrossoni Neto wrote — his GitHub repo is here — https://github.com/carrossoni/DatabricksGenieBOT
 
 2. Edit configuration (e.g. `config.py` or `.env`will be better) to include the env variables:
+- For simplicity we are harcoding these variables in `config.py`, however is not a good practice for Prod/real scenarios
    
-- **Microsoft App ID**  
-- **Client Secret**  
-- **Tenant ID**  
-- **Genie Space ID**  
-- **Genie API Endpoint**  
-- **Databricks Access Token**
+- **Microsoft App ID**  - Can get it from Azure Bot configuration
+- **Client Secret**     - Can get it from Azure Bot configuration
+- **Tenant ID**         - Can get it from Azure Bot configuration
+- **Genie Space ID**    - Can get it from Genie UI configuration (see above instructions)
+- **Databricks Host**   - Can get it from Databricks UI
+- **Databricks Access Token** - Can get from Databricks UI
 
-**Note**: To get a Databricks token, head to https://adb-<yourhost>.azuredatabricks.net/settings/user/developer and create an Access Token.
+**Note**: To get a Databricks token, head to your **Databricks Workspace --> Settings --> User --> Developer --> Access Token --> Manage -> Generate new token**
 
 3. Save the **config.py** file
+
+![Genie](img/genie-rg10.png)  
+
+---
 
 ### 4.3.2 Azure CLI & Deployment  
 1. Install / use **Azure CLI**  
 2. Run: `az login` and select the correct subscription  
-3. Open **Log Stream** for your Web App (in Azure Portal) to monitor logs during deployment  
+3. Open **Monitoring --> Log Stream** for your Web App (in Azure Portal) to monitor logs during deployment  
 4. Deploy the application:
 
    `az webapp up --name <your-webapp-name> --resource-group <rg-genie-teams> --plan <your-app-service-plan> --runtime "PYTHON:3.13" --sku B1`
 
-5. Monitor deployment status via the Deployment Center in Azure Portal  
+
+![Genie](img/genie-rg11.png)  
+![Genie](img/genie-rg12.png)  
+   
+
+5. Monitor deployment status via the `Deployment Center` in Azure Portal  
 6. Confirm the application is running and the bot endpoint is reachable
+
+![Genie](img/genie-rg13.png)  
 
 ---
 
