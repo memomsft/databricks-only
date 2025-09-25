@@ -7,12 +7,13 @@ This guide explains how to package your Azure Bot as a **Teams app**, upload it 
 ## 5.1 Requirements (Teams & Tenant)
 
 - A **Microsoft 365 tenant** where we can upload custom apps. We are using a Contoso Tenant (special) for this purpose 
-- **Teams custom app upload** must be allowed. In **Teams admin center**:  
-  `Teams apps → Setup policies → Upload custom apps = On`
+- **Teams custom app upload** must be allowed. In **[Teams admin center](https://admin.teams.microsoft.com/)**:  
+  `Teams apps → Setup policies → Add a policy → Upload custom apps = On` (we will attach our bot to this policy later)
 
+![Genie](img/teams1.png)
   
-- You can upload apps via **Teams client** (`Apps → Manage your apps → Upload an app → Upload a custom app`) or through **Developer Portal** (“Import app”, “Publish to org”). :contentReference[oaicite:3]{index=3}
-- Note for government clouds: custom-app upload is available in **GCC**, but **not** in GCC High/DoD or Teams operated by 21Vianet. :contentReference[oaicite:4]{index=4}
+- You can upload apps via **Teams client** (`Apps → Manage your apps → Upload an app → Upload a custom app`) or through **Developer Portal** (“Import app”, “Publish to org”). 
+
 
 **We’ll need from previous sections**
 - **Microsoft App ID** (Azure Bot’s App ID).
