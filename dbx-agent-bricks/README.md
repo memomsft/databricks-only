@@ -7,3 +7,20 @@ We focus on two **core use cases**:
 2. **Information Extraction** – Turn unstructured docs into structured Delta tables.  
 
 👉 The goal is to provide a **hands-on demo** that is simple, easy to follow, and highlights business value.
+
+---
+
+## 📚 Index
+
+- [00 – Overview](./00-overview.md)  
+- [01 – Prerequisites](./01-prerequisites.md)  
+- [02 – Knowledge Assistant (UI Walkthrough)](./02-knowledge-assistant-ui-walkthrough.md)  
+- [03 – Information Extraction (UI Walkthrough)](./03-information-extraction-ui-walkthrough.md)  
+
+---
+
+## 🚀 How to use this repo
+1. Start with **[00 – Overview](./00-overview.md)** to understand the scope.  
+2. Check **[01 – Prerequisites](./01-prerequisites.md)** and run the data prep script (`assets_generator.py`).  
+3. Follow the **Knowledge Assistant walkthrough** to build your first Agent Brick.  
+4. Continue with the **Information Extraction walkthrough** to generate structured Delta tables from docs.  
