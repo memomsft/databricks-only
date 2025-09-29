@@ -13,9 +13,9 @@ We focus on two **core use cases**:
 ## 📚 Index
 
 - [00 – Overview](./00-overview.md)  
-- [01 – Prerequisites](/01-prerequisites.md)  
-- [02 – Knowledge Assistant (UI Walkthrough)](/02-knowledge-assistant-ui-walkthrough.md)  
-- [03 – Information Extraction (UI Walkthrough)](/03-information-extraction-ui-walkthrough.md)  
+- [01 – Prerequisites](./01-prerequisites.md)  
+- [02 – Knowledge Assistant (UI Walkthrough)](./02-knowledge-assistant-ui-walkthrough.md)  
+- [03 – Information Extraction (UI Walkthrough)](./03-information-extraction-ui-walkthrough.md)  
 
 ---
 
