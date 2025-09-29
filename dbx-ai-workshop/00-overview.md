@@ -26,6 +26,9 @@ This repo provides a practical flow to address those challenges:
 
 4. **AI Gateway (Governance)**  
    Apply rate limits, auditing, and usage controls for all LLM traffic.  
-   - *Use case*: prevent shadow IT, control cost, enforce compliance.  
+   - *Use case*: prevent shadow IT, control cost, enforce compliance.
+  
+5. **Mosaic AI Gateway + External Models**
+   Expose Azure OpenAI Models via Mosaic Gateway for batch inferencing
 
 By the end, you’ll see how Databricks unifies **Generative AI + the Lakehouse + enterprise governance** in one platform.
