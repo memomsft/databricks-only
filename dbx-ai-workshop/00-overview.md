@@ -2,7 +2,7 @@
 
 This workshop demonstrates how **Databricks enables end-to-end Generative AI solutions** by combining agents, real-time inference, feature serving, and governance.
 
-## Why this workshop?
+---
 
 Organizations today face common challenges:
 - **Democratizing data access** with natural language.
