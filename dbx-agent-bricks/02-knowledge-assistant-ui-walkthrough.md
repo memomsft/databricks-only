@@ -51,7 +51,7 @@ After you click **Create Agent**, the assistant begins processing your knowledge
 - Behind the scenes, the docs are split into chunks, embedded, and indexed.
 - The agent is linked to an MLflow experiment for tracking.
 
-👉 Wait until processing completes before running serious queries.  
+👉 Wait until processing completes (15 min approx) before running serious queries.  
 You *can* test while it’s processing, but answers may be partial.
 
 
@@ -65,3 +65,6 @@ You *can* test while it’s processing, but answers may be partial.
 - “Summarize the shipping policy in 3 bullets.”  
 
 👉 Answers will be grounded in your `.md` docs and include citations.
+
+
+![Knowledge](./assets/knowledge4.png)
