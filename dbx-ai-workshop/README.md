@@ -13,7 +13,7 @@ It is designed for:
 
 | Section | Topic | Description |
 |---------|-------|-------------|
-| [00 – Overview](/00-overview.md) | Concepts & Value | Why Generative AI on Databricks matters: challenges, value, and flow. |
+| [00 – Overview](./00-overview.md) | Concepts & Value | Why Generative AI on Databricks matters: challenges, value, and flow. |
 | [01 – Prerequisites](./01-prerequisites.md) | Setup | Requirements: Databricks workspace, Unity Catalog, tokens, optional Azure OpenAI. |
 | [02 – Data Preparation](/data_prep/01-create-demo-tables.md) | Lakehouse Base | Create demo retail tables (`customers`, `products`, `orders`) and simulate live orders. |
 | [02 – Agent Bricks (UI)](/02-data-agent/01-agent-ui-walkthrough.md) | Democratization | Build an agent in UI that answers NL questions and shows SQL. |
