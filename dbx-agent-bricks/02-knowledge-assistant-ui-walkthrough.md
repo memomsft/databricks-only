@@ -87,3 +87,73 @@ When your agent is created, Databricks automatically registers an **MLflow exper
 
 
 ![Knowledge](./assets/knowledge4.png)
+
+
+--- 
+
+# Agent Bricks – Knowledge Assistant (UI Walkthrough)
+
+## What is a Knowledge Assistant?
+A Knowledge Assistant lets you build a **Q&A agent** that answers questions from your own documents.  
+It uses Retrieval-Augmented Generation (RAG) with files in Unity Catalog Volumes, ensuring answers are grounded with **citations**.
+
+---
+
+## Step-by-Step Setup
+
+1. **Basic Info**
+   - **Name**: `Retail-Knowledge-Assistant`
+   - **Description**:  
+     > "Answers customer and product-related questions based on our retail knowledge base."
+
+2. **Configure Knowledge Sources**
+   - **Type**: `UC Files`  
+   - **Source**: select the folder:  
+     `/Volumes/main/demo_llm/agent_docs/knowledge_base/`
+   - **Name**: `Knowledge Base`  
+   - **Describe the content**:  
+     > “Retail knowledge base including FAQ, store policies, and product catalog. Use this source to answer questions about **returns, refunds, exchanges, shipping timelines, and available categories**. Not for customer-specific order history.”
+
+   👉 Note: The wizard works at **folder level**, so all supported files (`FAQ.md`, `Policies.md`, `Catalog.md`) will be ingested automatically.
+
+3. **Optional – Instructions**
+   - Provide guardrails for responses. Example:  
+     > “Answer concisely in plain English. Always cite sources. If unsure, respond with ‘I don’t know’.”
+
+4. **Create Agent**
+   - Click **Create Agent** to finalize.  
+   - The system begins processing files (chunking, embedding, indexing).  
+   - Status will show **Processing files** until ingestion completes.
+
+---
+
+## 🔍 MLflow Experiment Link
+When your agent is created, Databricks automatically registers an **MLflow experiment** linked to it.  
+
+- Think of it as the **logbook of your agent**:
+  - Tracks configuration (knowledge sources, instructions).  
+  - Logs queries and responses (for debugging and replay).  
+  - Enables evaluations like **faithfulness** (is the answer grounded?) and **citation accuracy**.  
+
+- In the UI, you’ll see:
+  - Experiment name like `ka-<id>-dev-experiment`.  
+  - Tabs for **Traces**, **Evaluations**, **Labeling**, **Versions**, **Scorers (Beta)**.  
+
+👉 For the workshop, we won’t go deep into MLflow, but it’s useful to highlight that MLflow adds **observability** and **quality control** for agents in production.
+
+---
+
+## Test Prompts
+Once status is ready (processing complete), test the agent:
+
+- “What is the return policy for defective items?”  
+- “Which product categories do we sell?”  
+- “Summarize the shipping policy in 3 bullets.”  
+
+👉 Answers will be grounded in your docs and include citations.
+
+![Knowledge](./assets/knowledge5.png)
+
+---
+
+
