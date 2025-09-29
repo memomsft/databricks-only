@@ -11,7 +11,7 @@ It ensures **citations**, reducing hallucination and increasing trust.
 1. Open **AI/ML Experience → Agents → Knowledge Assistant**.
 2. Click **Build** → name it `Retail-Knowledge-Assistant`.
 
-![Knowledge](/assets/knowledge1.png)
+![Knowledge](./assets/knowledge1.png)
 
 ---
 
