@@ -55,7 +55,7 @@ After you click **Create Agent**, the assistant begins processing your knowledge
 You *can* test while it’s processing, but answers may be partial.
 
 
-![Knowledge](./assets/knowledge2.png)
+![Knowledge](./assets/knowledge3.png)
 
 ---
 
