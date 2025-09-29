@@ -76,6 +76,9 @@ When your agent is created, Databricks automatically registers an **MLflow exper
 
 👉 For the workshop, we won’t go deep into MLflow, but it’s useful to highlight that MLflow adds **observability** and **quality control** for agents in production.
 
+
+![Knowledge](./assets/knowledge6.png)
+
 ---
 
 ## Test Prompts
