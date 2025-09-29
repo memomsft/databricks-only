@@ -33,13 +33,16 @@ It uses Retrieval-Augmented Generation (RAG) with files in Unity Catalog Volumes
        - Catalog → “Product categories and available items.”
 
    👉 You can add up to 10 sources. For this demo, we’ll use 3.
+   👉 The wizard works at **folder level**, so all supported files (`FAQ.md`, `Policies.md`, `Catalog.md`) will be ingested automatically.
 
-5. **Optional – Instructions**
+6. **Optional – Instructions**
    - Provide guardrails for responses. Example:  
      > “Answer concisely in plain English. Always cite sources. If unsure, respond with ‘I don’t know’.”
 
-6. **Create Agent**
+7. **Create Agent**
    - Click **Create Agent** to finalize.
+   - The system begins processing files (chunking, embedding, indexing).  
+   - Status will show **Processing files** until ingestion completes.
   
 ![Knowledge](./assets/knowledge2.png)
 
@@ -56,6 +59,22 @@ You *can* test while it’s processing, but answers may be partial.
 
 
 ![Knowledge](./assets/knowledge3.png)
+
+---
+
+## 🔍 MLflow Experiment Link
+When your agent is created, Databricks automatically registers an **MLflow experiment** linked to it.  
+
+- Think of it as the **logbook of your agent**:
+  - Tracks configuration (knowledge sources, instructions).  
+  - Logs queries and responses (for debugging and replay).  
+  - Enables evaluations like **faithfulness** (is the answer grounded?) and **citation accuracy**.  
+
+- In the UI, you’ll see:
+  - Experiment name like `ka-<id>-dev-experiment`.  
+  - Tabs for **Traces**, **Evaluations**, **Labeling**, **Versions**, **Scorers (Beta)**.  
+
+👉 For the workshop, we won’t go deep into MLflow, but it’s useful to highlight that MLflow adds **observability** and **quality control** for agents in production.
 
 ---
 
