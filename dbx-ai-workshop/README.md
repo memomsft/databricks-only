@@ -1,7 +1,7 @@
 # Databricks LLM Demo – Agents, Serving, Features & Governance
 
 
-A **hands-on**, production-friendly demo for technical teams to showcase Databricks LLM usage:
+A **hands-on**, demo for technical teams to showcase Databricks LLM usage:
 
 
 1. **Agent Bricks** (UI-first) + programmatic fallback for agent behavior
