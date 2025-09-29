@@ -11,7 +11,6 @@ catalog = "<your_catalog>"
 schema = "<your_schema>"
 
 
-spark.sql(f"USE CATALOG {catalog}")
 spark.sql(f"USE {catalog}.{schema}")
 
 orders_schema = StructType([
