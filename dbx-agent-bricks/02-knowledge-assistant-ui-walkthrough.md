@@ -25,10 +25,8 @@ It uses Retrieval-Augmented Generation (RAG) with files in Unity Catalog Volumes
    - Click **Add** and configure each source:
      - **Type**: `UC Files`
      - **Source**:  
-       - `/Volumes/main/demo_llm/agent_docs/knowledge_base/FAQ.md`  
-       - `/Volumes/main/demo_llm/agent_docs/knowledge_base/Policies.md`  
-       - `/Volumes/main/demo_llm/agent_docs/knowledge_base/Catalog.md`
-     - **Name**: `FAQ`, `Policies`, `Catalog`
+       - `/Volumes/<your_catalog>/<your_schema>/folder/`
+     - **Name**: `Knowledge Base`
      - **Describe the content**:  
        - FAQ → “Frequently asked questions about returns and shipping.”  
        - Policies → “Retail store policies including returns and shipping.”  
@@ -42,6 +40,22 @@ It uses Retrieval-Augmented Generation (RAG) with files in Unity Catalog Volumes
 
 6. **Create Agent**
    - Click **Create Agent** to finalize.
+  
+![Knowledge](./assets/knowledge2.png)
+
+---
+
+### Processing Phase
+After you click **Create Agent**, the assistant begins processing your knowledge base:
+- Status will show **Processing files**.
+- Behind the scenes, the docs are split into chunks, embedded, and indexed.
+- The agent is linked to an MLflow experiment for tracking.
+
+👉 Wait until processing completes before running serious queries.  
+You *can* test while it’s processing, but answers may be partial.
+
+
+![Knowledge](./assets/knowledge2.png)
 
 ---
 
