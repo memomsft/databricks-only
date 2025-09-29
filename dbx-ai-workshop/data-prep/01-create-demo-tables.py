@@ -6,11 +6,12 @@ from pyspark.sql.types import StructType, StructField, IntegerType, StringType, 
 from pyspark.sql import functions as F
 import os
 
+catalog = "<your_catalog>"
+schema = "your_schema"
 
-catalog = os.getenv("UC_CATALOG", "main")
-schema = os.getenv("UC_SCHEMA", "demo_llm")
-spark.sql(f"CREATE CATALOG IF NOT EXISTS {catalog}")
-spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog}.{schema}")
+
+spark.sql(f"USE CATALOG {catalog}")
+spark.sql(f"CREATE SCHEMA IF NOT EXISTS {schema}")
 spark.sql(f"USE {catalog}.{schema}")
 
 
