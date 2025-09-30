@@ -101,3 +101,27 @@ write_jsonl(f"{base}/receipts/receipts.jsonl", receipts)
 write_jsonl(f"{base}/notes/notes.jsonl", notes)
 
 print("✅ Assets generated successfully at:", base)
+
+
+# --- Optional: Create a Delta table for labeled dataset demos ---
+# This table has input (text) and expected (JSON string) columns
+# so you can try the "Labeled dataset" option in Information Extraction.
+
+labeled_samples = [
+    {
+        "input": "Receipt: Customer 1 paid $100.50 on 2025-01-10",
+        "expected": json.dumps({"customer_id": 1, "amount": 100.50, "ts": "2025-01-10T12:00:00Z"})
+    },
+    {
+        "input": "Receipt: Customer 2 paid $250.00 on 2025-01-11",
+        "expected": json.dumps({"customer_id": 2, "amount": 250.00, "ts": "2025-01-11T09:15:00Z"})
+    }
+]
+
+df = spark.createDataFrame(labeled_samples)
+
+# Save as Delta table under the same catalog/schema
+labeled_table = f"{catalog}.{schema}.labeled_receipts"
+df.write.mode("overwrite").format("delta").saveAsTable(labeled_table)
+
+print(f"✅ Labeled dataset created as Delta table: {labeled_table}")
