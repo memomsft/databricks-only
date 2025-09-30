@@ -11,15 +11,15 @@ A **supervisor agent** that can:
 - Delegate to an **Information Extraction** agent to produce structured JSON from documents. 
 - Optionally query a **Genie Space** for data exploration (text-to-SQL) and combine results. 
 
-> This pattern is ideal when tasks span multiple specialties (search, extraction, analytics) and need a single entry point. :contentReference[oaicite:4]{index=4}
+> This pattern is ideal when tasks span multiple specialties (search, extraction, analytics) and need a single entry point.
 
 ---
 
 ## Prerequisites
 
-- Unity Catalog enabled and basic workspace permissions to create Agent Bricks resources. :contentReference[oaicite:5]{index=5}
-- At least one **Knowledge Assistant** (pointing to a UC Volume or Vector Search) and/or **Information Extraction** agent ready. :contentReference[oaicite:6]{index=6}
-- (Optional) An existing **Genie Space** with access to demo tables for ad-hoc questions. :contentReference[oaicite:7]{index=7}
+- Unity Catalog enabled and basic workspace permissions to create Agent Bricks resources. 
+- At least one **Knowledge Assistant** (pointing to a UC Volume or Vector Search) and/or **Information Extraction** agent ready. 
+- (Optional) An existing **Genie Space** with access to demo tables for ad-hoc questions.
 
 ---
 
@@ -41,18 +41,18 @@ A **supervisor agent** that can:
 2. Name it, e.g., `retail-multi-agent-demo`.  
 3. (Optional) Add a short **description/context**, e.g., “Retail demo orchestrating RAG, extraction, and SQL exploration.”
 
-> Multi-Agent Supervisor is designed to **coordinate** Genie Spaces, Agent Bricks endpoints, and tools. :contentReference[oaicite:8]{index=8}
+> Multi-Agent Supervisor is designed to **coordinate** Genie Spaces, Agent Bricks endpoints, and tools. 
 
 ---
 
 ### 2) Add Participants (Agents & Tools)
 1. Click **Add participants**.  
 2. Select from:
-   - **Knowledge Assistant** agent (your RAG bot over UC files/Vector Search). :contentReference[oaicite:9]{index=9}  
-   - **Information Extraction** agent (your structured-output extractor). :contentReference[oaicite:10]{index=10}  
-   - **Genie Space** (text-to-SQL over Unity Catalog). :contentReference[oaicite:11]{index=11}
+   - **Knowledge Assistant** agent (your RAG bot over UC files/Vector Search). 
+   - **Information Extraction** agent (your structured-output extractor).  
+   - **Genie Space** (text-to-SQL over Unity Catalog). 
 3. (Optional) Add **tools** supported in your workspace (e.g., data/HTTP tools where available).  
-   *(Databricks positions Multi-Agent Supervisor to orchestrate agents and tools; some orgs pair this with tool ecosystems.)* :contentReference[oaicite:12]{index=12}
+   *(Databricks positions Multi-Agent Supervisor to orchestrate agents and tools; some orgs pair this with tool ecosystems.)*
 
 *(screenshot placeholder)*  
 ![Add-Participants](assets/multi-agent/step2-participants.png)
@@ -71,7 +71,7 @@ Use natural-language instructions that explain:
 *(screenshot placeholder)*  
 ![Guidelines](assets/multi-agent/step3-guidelines.png)
 
-> The supervisor uses AI orchestration patterns to manage **delegation and result synthesis**. Keep guidelines explicit and concise. :contentReference[oaicite:13]{index=13}
+> The supervisor uses AI orchestration patterns to manage **delegation and result synthesis**. Keep guidelines explicit and concise.
 
 ---
 
@@ -86,9 +86,9 @@ Click **Save and update** to persist configuration.
 
 Use the **Test** panel to run prompts that require delegation:
 
-- “What do our return policies say about damaged items?” → should route to **Knowledge Assistant** (RAG). :contentReference[oaicite:14]{index=14}  
-- “Extract `customer_id`, `amount`, and `ts` from these receipts.” → should route to **Information Extraction**. :contentReference[oaicite:15]{index=15}  
-- “Total revenue last 7 days by category.” → should route to **Genie Space** (SQL). :contentReference[oaicite:16]{index=16}
+- “What do our return policies say about damaged items?” → should route to **Knowledge Assistant** (RAG).  
+- “Extract `customer_id`, `amount`, and `ts` from these receipts.” → should route to **Information Extraction**.  
+- “Total revenue last 7 days by category.” → should route to **Genie Space** (SQL).
 
 *(screenshot placeholder)*  
 ![Test-Panel](assets/multi-agent/step5-test.png)
