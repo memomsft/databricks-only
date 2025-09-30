@@ -107,35 +107,31 @@ print("✅ Assets generated successfully at:", base)
 # This table has input (text) and expected (JSON string) columns
 # so you can try the "Labeled dataset" option in Information Extraction.
 
-from pyspark.sql.types import StructType, StructField, StringType, DoubleType, IntegerType, TimestampType
-import datetime
+from pyspark.sql.types import StructType, StructField, StringType
+import json
 
-# Schema for labeled dataset
+# Schema with both input and expected as strings
 schema_label = StructType([
     StructField("input", StringType(), True),
-    StructField("expected", StructType([
-        StructField("customer_id", IntegerType(), True),
-        StructField("amount", DoubleType(), True),
-        StructField("ts", StringType(), True)  # or TimestampType if you prefer
-    ]), True)
+    StructField("expected", StringType(), True)
 ])
 
-# Sample labeled data (note: expected is a dict, not json.dumps)
+# Sample labeled data (expected is json.dumps → valid JSON string)
 labeled_samples = [
     (
         "Receipt: Customer 1 paid $100.50 on 2025-01-10",
-        {"customer_id": 1, "amount": 100.50, "ts": "2025-01-10T12:00:00Z"}
+        json.dumps({"customer_id": 1, "amount": 100.50, "ts": "2025-01-10T12:00:00Z"})
     ),
     (
         "Receipt: Customer 2 paid $250.00 on 2025-01-11",
-        {"customer_id": 2, "amount": 250.00, "ts": "2025-01-11T09:15:00Z"}
+        json.dumps({"customer_id": 2, "amount": 250.00, "ts": "2025-01-11T09:15:00Z"})
     )
 ]
 
 # Create DataFrame
 df = spark.createDataFrame(labeled_samples, schema=schema_label)
 
-# Save as Delta table (catalog.schema.table)
+# Save as Delta table
 labeled_table = f"{catalog}.{schema}.labeled_receipts"
 df.write.mode("overwrite").format("delta").saveAsTable(labeled_table)
 
