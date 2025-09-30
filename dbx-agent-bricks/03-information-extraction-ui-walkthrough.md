@@ -158,6 +158,6 @@ FROM query_results;
 
 ```
 
- ![extract](./assets/extraction5.png) 
+ ![extract](./assets/extraction6.png) 
 
 
