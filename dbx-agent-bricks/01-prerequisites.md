@@ -29,7 +29,7 @@ This will create the demo assets:
 
 Notes
 
-Permissions: ensure your Databricks user has:
+**Permissions:** ensure your Databricks user has:
 
 `USE CATALOG`
 `USE SCHEMA`
