@@ -38,3 +38,9 @@ In this workshop, we’ll focus on two practical use cases to make the concepts 
 2. An **Information Extraction** pipeline to extract fields from receipts/contracts into Delta.  
 
 👉 By the end, you will see how Agent Bricks can support both **RAG-style assistants** and **structured data pipelines**, while laying the foundation for more advanced use cases like **Custom LLMs** or **Multi-Agent Supervisors**.
+
+
+## 📚 Learn more
+
+For more details, see the official Microsoft Learn documentation:  
+🔗 [Agent Bricks on Microsoft Learn](https://learn.microsoft.com/en-us/azure/databricks/generative-ai/agent-bricks/)
