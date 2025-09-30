@@ -1,15 +1,15 @@
 # 04 — Multi-Agent Supervisor (UI Walkthrough)
 
-> Multi-Agent Supervisor lets you orchestrate multiple agents and tools (e.g., **Genie Spaces**, **Agent Bricks agents**, and external tools) under a single “supervisor” that coordinates tasks and synthesizes results. :contentReference[oaicite:0]{index=0}
+> Multi-Agent Supervisor lets you orchestrate multiple agents and tools (e.g., **Genie Spaces**, **Agent Bricks agents**, and external tools) under a single “supervisor” that coordinates tasks and synthesizes results. 
 
 ---
 
 ## What you’ll build
 
 A **supervisor agent** that can:
-- Delegate to a **Knowledge Assistant** for RAG-style answers. :contentReference[oaicite:1]{index=1}
-- Delegate to an **Information Extraction** agent to produce structured JSON from documents. :contentReference[oaicite:2]{index=2}
-- Optionally query a **Genie Space** for data exploration (text-to-SQL) and combine results. :contentReference[oaicite:3]{index=3}
+- Delegate to a **Knowledge Assistant** for RAG-style answers.
+- Delegate to an **Information Extraction** agent to produce structured JSON from documents. 
+- Optionally query a **Genie Space** for data exploration (text-to-SQL) and combine results. 
 
 > This pattern is ideal when tasks span multiple specialties (search, extraction, analytics) and need a single entry point. :contentReference[oaicite:4]{index=4}
 
