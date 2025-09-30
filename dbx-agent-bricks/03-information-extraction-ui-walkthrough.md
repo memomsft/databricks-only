@@ -30,6 +30,7 @@ When creating an Information Extraction agent, you have two options:
   - Useful for production or when you want fine-tuned, consistent extraction quality.
 
 👉 For this workshop we will continue with **Unlabeled dataset** to keep it lightweight, but remember that **Labeled dataset** is the recommended option for enterprise use cases.
+   If you want to explore the **Labeled dataset** path you can generate a dummy training-dataset using the optional snippet in `dbx-agent-bricks/assets_generator.py` that will generate a delta table for such purpose
 
 ---
 
