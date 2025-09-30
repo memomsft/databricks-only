@@ -100,6 +100,10 @@ print("✅ Genie demo tables created: customers, products, orders")
 
 ```
 
+![Supervisor-Overview](assets/multi2.png)
+
+---
+
 ## Step 2 — Connect Genie to your tables
 
 - Open the Genie UI.
