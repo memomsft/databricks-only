@@ -14,9 +14,9 @@ We focus on two **core use cases**:
 
 - [00 – Overview](./00-overview.md)  
 - [01 – Prerequisites](./01-prerequisites.md)  
-- [02 – Knowledge Assistant (UI Walkthrough)](./02-knowledge-assistant-ui-walkthrough.md)
-- [02.1 – Improve Quality (UI Walkthrough)](./02.1-improve-quality.md)   
-- [03 – Information Extraction (UI Walkthrough)](./03-information-extraction-ui-walkthrough.md)  
+- [02 – Knowledge Assistant (UI Walkthrough)](./02-knowledge-assistant-ui-walkthrough.md)  
+- [03 – Information Extraction (UI Walkthrough)](./03-information-extraction-ui-walkthrough.md)
+- [04 – Improve Quality (UI Walkthrough)](./04-improve-quality.md)  
 
 ---
 
