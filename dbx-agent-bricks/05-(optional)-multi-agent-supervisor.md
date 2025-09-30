@@ -63,8 +63,8 @@ We’ll generate three Delta tables in Unity Catalog: `customers`, `products`, `
 from pyspark.sql import Row
 import random, datetime
 
-catalog = "dbx_west_ext"
-schema = "demo_llm"
+catalog = "<your_catalog>"
+schema = "your_schema"
 
 # --- Customers ---
 customers = [
