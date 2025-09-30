@@ -27,7 +27,7 @@ This will create the demo assets:
 
 👉 After this step, you’ll have all the assets needed to follow the UI demos for both Knowledge Assistant and Information Extraction.
 
-Notes
+# Notes
 
 **Permissions:** ensure your Databricks user has:
 
