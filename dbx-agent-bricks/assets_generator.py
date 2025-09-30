@@ -103,41 +103,4 @@ write_jsonl(f"{base}/notes/notes.jsonl", notes)
 print("✅ Assets generated successfully at:", base)
 
 
-# --- Optional: Create a Delta table for labeled dataset demos ---
-# This table has input (text) and expected (JSON string) columns
-# so you can try the "Labeled dataset" option in Information Extraction.
 
-from pyspark.sql.types import StructType, StructField, StringType
-import json
-
-# Build labeled rows from the receipts already generated above
-label_schema = StructType([
-    StructField("input", StringType(), True),
-    StructField("expected", StringType(), True)   # <-- valid JSON string per row
-])
-
-labeled_rows = []
-for r in receipts:   # we generated 10 receipts above
-    input_text = r["text"]  # unstructured input for training
-    # IMPORTANT: wrap in the 'receipts' array to match the IE schema
-    expected_json_obj = {
-        "receipts": [
-            {
-                "customer_id": r["customer_id"],
-                "amount": r["amount"],
-                "ts": r["ts"]
-                # include other fields only if you will also include them in Sample JSON output
-                # e.g., "doc_id": r["doc_id"], "text": r["text"]
-            }
-        ]
-    }
-    labeled_rows.append((input_text, json.dumps(expected_json_obj)))
-
-labeled_df = spark.createDataFrame(labeled_rows, schema=label_schema)
-
-table_fqn = f"{catalog}.{schema}.labeled_receipts"
-# Re-create cleanly
-spark.sql(f"DROP TABLE IF EXISTS {table_fqn}")
-labeled_df.write.mode("overwrite").format("delta").saveAsTable(table_fqn)
-
-print(f"✅ Labeled dataset created as Delta table: {table_fqn}")
