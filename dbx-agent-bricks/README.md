@@ -10,7 +10,7 @@ We focus on two **core use cases**:
 
 ---
 
-## 📚 Index
+## 📑 Table of Contents
 
 - [00 – Overview](./00-overview.md)  
 - [01 – Prerequisites](./01-prerequisites.md)  
