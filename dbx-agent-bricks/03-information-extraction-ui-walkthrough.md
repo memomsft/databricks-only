@@ -50,7 +50,9 @@ When creating an Information Extraction agent, you have two options:
 
     
    > Supported formats: JSON, JSONL, TXT, MD, XML, DOC/DOCX, PDF (PDFs must first be converted into a Unity Catalog table).
-   > ⚠️ Note: In production you’d typically point to a folder of many documents or use a **labeled dataset** for higher accuracy.  
+   
+   > ⚠️ Note: In production you’d typically point to a folder of many documents or use a **labeled dataset** for higher accuracy.
+   
    > For this workshop demo we’re keeping it simple with one file.
 
 
