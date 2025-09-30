@@ -17,7 +17,7 @@ We focus on two **core use cases**:
 - [02 – Knowledge Assistant (UI Walkthrough)](./02-knowledge-assistant-ui-walkthrough.md)  
 - [03 – Information Extraction (UI Walkthrough)](./03-information-extraction-ui-walkthrough.md)
 - [04 – Improve Quality (UI Walkthrough)](./04-improve-quality.md)  
-
+- [05 – (Optional) Multi-Agent(UI Walkthrough)](./05-(Optional)multi-agent-supervisor.md)  
 ---
 
 ## 🚀 How to use this repo
