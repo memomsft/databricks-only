@@ -5,7 +5,7 @@
 To use Agent Bricks you need:
 - A workspace that includes the following:
 - Mosaic AI Agent Bricks Preview (Beta) enabled. See [Manage Azure Databricks previews](https://learn.microsoft.com/en-us/azure/databricks/admin/workspace-settings/manage-previews)
-- Serverless compute enabled.[Serverless compute requirements](https://learn.microsoft.com/en-us/azure/databricks/compute/serverless/#requirements)
+- Serverless compute enabled. See [Serverless compute requirements](https://learn.microsoft.com/en-us/azure/databricks/compute/serverless/#requirements)
 - Unity Catalog enabled. See [Enable a workspace for Unity Catalog](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/enable-workspaces)
 - Access to foundation models in Unity Catalog through the `system`.ai schema.
 - Access to a serverless budget policy with a nonzero budget.
