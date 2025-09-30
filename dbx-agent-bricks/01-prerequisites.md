@@ -19,7 +19,7 @@ To use Agent Bricks you need:
 2. Run the setup script:  
 
    ```bash
-   python 02_data_prep/assets_generator.py
+   dbx-agent-bricks/assets_generator.py
 
 This will create the demo assets:
 
