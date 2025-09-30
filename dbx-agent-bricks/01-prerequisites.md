@@ -3,11 +3,13 @@
 ## Databricks
 
 To use Agent Bricks you need:
-
-- A Databricks **workspace with Unity Catalog enabled**.  
-- A cluster or SQL warehouse running **Databricks ML Runtime 14.x+** (supports agent execution and MLflow integration).  
-- Permission to create and manage **Volumes** and **Delta tables** in Unity Catalog.  
-- (Optional) Permission to create and use **Vector Search indexes** if you want to try that as a knowledge source.  
+- A workspace that includes the following:
+- Mosaic AI Agent Bricks Preview (Beta) enabled. See [Manage Azure Databricks previews](https://learn.microsoft.com/en-us/azure/databricks/admin/workspace-settings/manage-previews)
+- Serverless compute enabled.[Serverless compute requirements](https://learn.microsoft.com/en-us/azure/databricks/compute/serverless/#requirements)
+- Unity Catalog enabled. See [Enable a workspace for Unity Catalog](https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/enable-workspaces)
+- Access to foundation models in Unity Catalog through the `system`.ai schema.
+- Access to a serverless budget policy with a nonzero budget.
+- A workspace in one of the supported regions: `centralus, eastus, eastus2, northcentralus, southcentralus. westus, or westus2`.
 
 ---
 
