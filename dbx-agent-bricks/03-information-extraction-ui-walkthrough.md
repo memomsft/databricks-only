@@ -160,4 +160,57 @@ FROM query_results;
 
  ![extract](./assets/extraction6.png) 
 
+---
+
+# 🔎 Real-World Applications & Next Steps
+
+Once the **Information Extraction Agent** is created and tested with `ai_query`, the results are more than just JSON responses — they become **actionable structured data**.  
+
+This bridges the gap between **raw documents** (receipts, contracts, invoices) and **business-ready analytics**.
+
+---
+
+## 🌍 Real-World Applications
+
+### Finance & Accounting
+- Automate processing of **invoices and receipts**.  
+- Extract fields like `invoice_id`, `amount`, and `due_date` directly into Delta tables.  
+- Reconcile transactions automatically with ERP/Finance systems.
+
+### Retail & Customer Insights
+- Capture data from **store receipts** (customer ID, purchase amount).  
+- Enrich with loyalty program data to analyze **spend patterns** and detect anomalies.  
+
+### Legal & Compliance
+- Process **contracts and agreements**.  
+- Extract `contract_value`, `expiration_date`, `term_months` → use Delta tables to monitor renewals.  
+
+### Healthcare
+- Extract structured information from **claims and medical reports**.  
+- Enable faster **billing validation** and operational efficiency.  
+
+### Government & Public Sector
+- Digitize and structure **permits, forms, or tax filings**.  
+- Make them queryable for compliance, transparency, and auditing.
+
+---
+
+## ⚡ Why use `ai_query` in SQL?
+
+- **Direct Integration** → Analysts can query extracted fields with SQL (no coding).  
+- **Composable** → Join results with existing fact/dimension tables for reporting.  
+- **Operationalization** → Run on schedules or workflows to process new documents continuously.  
+
+---
+
+## ✅ Next Steps
+
+- **Join with business data** (e.g., receipts with `dim_customer` for customer-level spend).  
+- **Feed into dashboards** (Power BI, Databricks SQL dashboards).  
+- **Use as ML input** → Extracted fields can train fraud detection or forecasting models.  
+- **Add governance** with Unity Catalog to control access and lineage for sensitive fields.  
+
+---
+
+👉 **In short:** This is not just a demo — it shows how **unstructured business documents** can be transformed into **auditable, queryable datasets** that power analytics, automation, and compliance.  
 
