@@ -110,29 +110,34 @@ print("✅ Assets generated successfully at:", base)
 from pyspark.sql.types import StructType, StructField, StringType
 import json
 
-# Schema with both input and expected as strings
-schema_label = StructType([
+# Build labeled rows from the receipts already generated above
+label_schema = StructType([
     StructField("input", StringType(), True),
-    StructField("expected", StringType(), True)
+    StructField("expected", StringType(), True)   # <-- valid JSON string per row
 ])
 
-# Sample labeled data (expected is json.dumps → valid JSON string)
-labeled_samples = [
-    (
-        "Receipt: Customer 1 paid $100.50 on 2025-01-10",
-        json.dumps({"customer_id": 1, "amount": 100.50, "ts": "2025-01-10T12:00:00Z"})
-    ),
-    (
-        "Receipt: Customer 2 paid $250.00 on 2025-01-11",
-        json.dumps({"customer_id": 2, "amount": 250.00, "ts": "2025-01-11T09:15:00Z"})
-    )
-]
+labeled_rows = []
+for r in receipts:   # we generated 10 receipts above
+    input_text = r["text"]  # unstructured input for training
+    # IMPORTANT: wrap in the 'receipts' array to match the IE schema
+    expected_json_obj = {
+        "receipts": [
+            {
+                "customer_id": r["customer_id"],
+                "amount": r["amount"],
+                "ts": r["ts"]
+                # include other fields only if you will also include them in Sample JSON output
+                # e.g., "doc_id": r["doc_id"], "text": r["text"]
+            }
+        ]
+    }
+    labeled_rows.append((input_text, json.dumps(expected_json_obj)))
 
-# Create DataFrame
-df = spark.createDataFrame(labeled_samples, schema=schema_label)
+labeled_df = spark.createDataFrame(labeled_rows, schema=label_schema)
 
-# Save as Delta table
-labeled_table = f"{catalog}.{schema}.labeled_receipts"
-df.write.mode("overwrite").format("delta").saveAsTable(labeled_table)
+table_fqn = f"{catalog}.{schema}.labeled_receipts"
+# Re-create cleanly
+spark.sql(f"DROP TABLE IF EXISTS {table_fqn}")
+labeled_df.write.mode("overwrite").format("delta").saveAsTable(table_fqn)
 
-print(f"✅ Labeled dataset created as Delta table: {labeled_table}")
+print(f"✅ Labeled dataset created as Delta table: {table_fqn}")
