@@ -72,11 +72,48 @@ For example:
 
 ---
 
-## Expected outcome
+## Schema Configuration & Guidelines (after Create Agent)
 
-- A **structured Delta table** with extracted fields.  
-- Each row includes a reference back to the original unstructured doc in the UC Volume.  
-- Ready to query with SQL, join with other tables, or feed into ML pipelines.  
+Once the agent is created, you will see the **Agent Configuration screen**:
+
+- **Input / Response panel (left):** shows raw input and the JSON the agent produced.  
+- **Agent Configuration panel (right):** lets you refine the schema by editing:  
+- **Field names** (e.g., `customer_id`, `doc_id`)  
+- **Data types** (`integer`, `string`, `double`, `timestamp`)  
+- **Descriptions / guidelines** → natural language hints that help the model stay consistent.  
+ - Example: `customer_id: integer → "Unique identifier of the customer who made the purchase"`  
+ - Example: `amount: double → "Payment amount recorded in this receipt in USD"`
+- **Instructions (global rules)** → apply formatting or consistency requirements across all extracted elements.  
+  - Example: *“All timestamps must be ISO 8601”*  
+  - Example: *“Round monetary values to two decimals”*  
+  - Example: *“Return `null` if a field is missing, do not infer values”*   
+
+👉 Think of this step as documenting your schema for both **humans** and the **agent**.
+
+6. When finished refining, click **Save and update**.  
+This applies your schema and ensures all future extractions follow these rules.  
+
+![extract](./assets/extraction3.png)
+
+---
+
+## Quality Report & Evaluation
+
+After saving and updating your agent, you can evaluate its extraction quality.
+
+1. Go to the **Quality report** tab.  
+2. Click **+ New evaluation** to start an evaluation run.  
+   - Select the dataset (e.g., `/Volumes/main/demo_llm/agent_docs/receipts/receipts.jsonl`).  
+   - The run will compare your agent against a baseline model (e.g., `kie-base-model`).  
+
+3. The **Evaluation in progress** message will appear. Results usually take ~20 minutes.  
+4. Once complete, the **Evaluation scores** will show how well the agent’s extracted fields match the expected schema.
+
+👉 **Why this matters**:  
+- Evaluations help validate your schema design.  
+- You can rerun evaluations after refining field descriptions or schema guidelines to measure improvements.
+
+ ![extract](./assets/extraction4.png) 
 
 ---
 
