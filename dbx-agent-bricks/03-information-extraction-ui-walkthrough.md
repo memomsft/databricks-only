@@ -117,16 +117,47 @@ After saving and updating your agent, you can evaluate its extraction quality.
 
 ---
 
-## Programmatic Query with `ai_query`
+## Using the Information Extraction Agent
 
 Once your Information Extraction agent is deployed, you can query it directly with SQL:  
 
+After the agent is created and configured, click **Use**.  
+
+ ![extract](./assets/extraction5.png) 
+
+ ---
+ 
+This will redirect you to the **SQL/AI Query editor**, where the agent can now be invoked programmatically using the prebuild Databricks function `ai_query`
+
+---
+
+### Example: Querying Receipts
+
 ```sql
--- Query the extraction agent programmatically
-SELECT *
-FROM ai_query(
-  "Retail-IE-Demo",   -- name of your extraction agent
-  "Extract contract_value, customer_id, and term_months from the uploaded contracts"
-);
+WITH query_results AS (
+  SELECT value AS input,
+         ai_query(
+           "kie-<your-endpoint-id>",   -- Agent endpoint ID
+           input,
+           failOnError => false
+         ) AS response
+  FROM (
+    SELECT value
+    FROM read_files(
+      '/Volumes/<your_catalog>/<your_schema>agent_docs/receipts/',
+      wholeText => true,
+      format => 'text'
+    )
+    LIMIT 20
+  )
+)
+SELECT input,
+       response.result AS response,
+       response.errorMessage AS error
+FROM query_results;
+
+```
+
+ ![extract](./assets/extraction5.png) 
 
 
