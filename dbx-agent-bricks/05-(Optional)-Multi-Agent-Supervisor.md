@@ -23,11 +23,10 @@ A **supervisor agent** that can:
 
 ---
 
-## Architecture at a glance
+## Process at a glance
 
 
-*(Add your diagram)*
-![Supervisor-Overview](assets/multi-agent/overview.png)
+![Supervisor-Overview](assets/multi1.png)
 
 ---
 
@@ -35,10 +34,12 @@ A **supervisor agent** that can:
 
 ### 1) Create the Supervisor
 1. Open **Agent Bricks → Multi-Agent Supervisor → Build**.  
-   *(screenshot placeholder)*  
-   ![Create-Supervisor](assets/multi-agent/step1-build.png)
+2. Name it, e.g., `retail-multi-agent-demo`.
 
-2. Name it, e.g., `retail-multi-agent-demo`.  
+![Supervisor-Overview](assets/multi2.png)
+
+---
+
 3. (Optional) Add a short **description/context**, e.g., “Retail demo orchestrating RAG, extraction, and SQL exploration.”
 
 > Multi-Agent Supervisor is designed to **coordinate** Genie Spaces, Agent Bricks endpoints, and tools. 
