@@ -1,4 +1,4 @@
-# 02.1 – Improve Quality & Evaluation
+# 04 – Improve Quality & Evaluation
 
 Once your Knowledge Assistant agent is created and you’ve tested some prompts, the next step is to **systematically improve quality**.  
 Databricks Agent Bricks provides an *Improve Quality* module that lets you build a labeled dataset for evaluation and continuous refinement.
