@@ -111,9 +111,20 @@ print("✅ Genie demo tables created: customers, products, orders")
    - `customers`
    - `products`
    - `orders`
-   - 
+- For instructions you can add guidelines for interpretation to help Genie provide accurate answers and relationships (opcional).
+  Example:
+  - `customers.country` stores the country where each customer resides (string).
+  - `products.category` stores the product’s category (e.g., “Electronics”, “Accessories”).
+  - when asking for sales totals, compute it as `orders.quantity` * `products.price`.
+  - when a user asks for order trends, use `orders.order_date` (string).
+  - `use `orders.status` to filter between "completed", "pending", or "cancelled" orders.
+- Join rules:
+  - `orders.customer_id = customers.customer_id` - N:1
+  - `orders.product_id = products.product_id`    - N:1
+
 
 ![Supervisor-Overview](assets/multi3.png)
+![Supervisor-Overview](assets/multi4.png)
 
 👉 Now Genie can answer SQL-based questions over these datasets.
 ---
@@ -121,21 +132,31 @@ print("✅ Genie demo tables created: customers, products, orders")
 ### Step 3 Create the Multi Agent Supervisor
 
 1. Open **Agent Bricks → Multi-Agent Supervisor → Build**.  
-2. Name it, e.g., `retail-multi-agent-demo`.
+2. Name it, e.g., `Retail-Multi-Agent-Demo`.
+3. Add a **Description** Example (A retail assistant that can answer policy questions from documents, extract structured details from receipts, and query customer and order data)
+4. In **Configure Agents** add the following participants (we can add up to 20 agents/tools among {Genie Space/Agent Endpoint/*MCP-coming soon}).
+   For this demo we will add only two because at the time of this demo only **Knowledge Agent** and **Genie** are supported as participants for a Multi-Agent:
 
-![Supervisor-Overview](assets/multi4.png)
+**Knowledge Assistant** - your RAG bot over UC files/Vector Search  (from section 02)
+- **Type**: Knowledge Agent  
+- **Source**: Point to the `knowledge_base` folder created in Section 02.  
+- **Agent Name**: `Retail-Knowledge`  
+- **Describe the content**: “Answers FAQs and policy questions from Markdown documents.”
 
----
 
-3. Add the following participants:
-   - **Knowledge Assistant** - your RAG bot over UC files/Vector Search  (from section 02)
-   - **Information Extraction Agent** - your structured-output extractor (from section 03)
-   - **Genie Space** - text-to-SQL over Unity Catalog (connected to your demo tables)
+**Genie**
+- **Type**: Genie  
+- **Source**: Select the demo tables (`customers`, `products`, `orders`) you created.  
+- **Agent Name**: `Genie Retail`  
+- **Describe the content**: “Answers SQL-based questions such as revenue by category or top customers.”
 
-4. (Optional) Add **tools** supported in your workspace (e.g., data/HTTP tools where available).  
+👉 Each agent description helps the supervisor decide which agent to delegate a query to.
+
+
+5. (Optional) Add instructions
    *(Databricks positions Multi-Agent Supervisor to orchestrate agents and tools; some orgs pair this with tool ecosystems.)*
 
-5. Save the configuration.
+6. Save the configuration.
 
 > Multi-Agent Supervisor is designed to **coordinate** Genie Spaces, Agent Bricks endpoints, and tools. 
 
