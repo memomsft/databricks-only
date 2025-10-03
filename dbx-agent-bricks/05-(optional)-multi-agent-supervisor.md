@@ -178,12 +178,14 @@ print("✅ Genie demo tables created: customers, products, orders")
 
 ## Step 4 - Test the Supervisor
 
-Use the **Test** panel to run prompts that require delegation:
+Use the **Test your Agent** panel to run prompts that require delegation:
 Try composite prompts like:
-  - “List the top 3 customers by total spend (Genie), and extract the payment details from the receipts (IE Agent).”
-  - “Summarize product policies (Knowledge Assistant) and revenue by product category (Genie).”
+  Once configured, you can run composite queries such as:
 
-![Test-Panel](assets/multi-agent/step5-test.png)
+- “What is the return policy for electronics? `(Knowledge)` Also, list the top 3 customers by total spend. `(Genie)`”
+
+
+![Add-Participants](assets/multi6.png)
 
 Tips:
 - If routing looks wrong, refine the **guidelines** with clearer triggers (keywords, examples).
