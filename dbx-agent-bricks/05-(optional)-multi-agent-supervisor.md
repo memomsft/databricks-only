@@ -212,7 +212,6 @@ SELECT
 
 With Genie, Knowledge Assistant, and Information Extraction combined, the Supervisor Agent can:
 - Answer natural language questions from documents.
-- Extract structured insights from unstructured text.
 - Run SQL analytics over structured data.
 
 This demonstrates the power of multi-agent orchestration in Databricks.
