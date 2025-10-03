@@ -117,7 +117,7 @@ print("✅ Genie demo tables created: customers, products, orders")
   - `products.category` stores the product’s category (e.g., “Electronics”, “Accessories”).
   - when asking for sales totals, compute it as `orders.quantity` * `products.price`.
   - when a user asks for order trends, use `orders.order_date` (string).
-  - `use `orders.status` to filter between "completed", "pending", or "cancelled" orders.
+  - use `orders.status` to filter between "completed", "pending", or "cancelled" orders.
 - Join rules:
   - `orders.customer_id = customers.customer_id` - N:1
   - `orders.product_id = products.product_id`    - N:1
@@ -133,7 +133,7 @@ print("✅ Genie demo tables created: customers, products, orders")
 
 ---
 
-### Step 3 Create the Multi Agent Supervisor
+### Step 3 - Create the Multi Agent Supervisor
 
 1. Open **Agent Bricks → Multi-Agent Supervisor → Build**.  
 2. Name it, e.g., `Retail-Multi-Agent-Demo`.
@@ -147,52 +147,33 @@ print("✅ Genie demo tables created: customers, products, orders")
 
 
 **Genie**
-- **Type**: Genie  
+- **Type**: `Genie Space` | **Genie space**: Choose the Genie Space we created `Genie-Retail`
 - **Source**: Select the demo tables (`customers`, `products`, `orders`) you created.  
-- **Agent Name**: `Genie Retail`  
-- **Describe the content**: “Answers SQL-based questions such as revenue by category or top customers.”
-
-👉 Each agent description helps the supervisor decide which agent to delegate a query to.
+- The rest of the fields will be populated with the information from the agent
 
 
-5. (Optional) Add instructions
-   *(Databricks positions Multi-Agent Supervisor to orchestrate agents and tools; some orgs pair this with tool ecosystems.)*
 
-6. Save the configuration.
+5. (Optional) **Instructions** you can add global rules for how the Supervisor should coordinate agents.
+   Example:
+   - Always provide structured answers.
+   - If the query asks about documents, prefer the Knowledge Assistant.
+   - When answering from Genie, include top 5 results unless otherwise asked.
+   - If the user wants KPIs or aggregations from warehouse tables, consult the Genie Space.
+   
+
+7. Click **Create Agent**.
 
 > Multi-Agent Supervisor is designed to **coordinate** Genie Spaces, Agent Bricks endpoints, and tools. 
 
 
-![Add-Participants](assets/multi-agent/step2-participants.png)
+![Add-Participants](assets/multi5.png)
 
----
-
-
-### 3) Define Supervisor Guidelines (Routing & Roles)
-Use natural-language instructions that explain:
-- **When to use each participant**  
-  - “If the query asks about documents, prefer the **Knowledge Assistant**.”  
-  - “If the user requests structured fields (amount, date, customer_id), delegate to **Information Extraction** and return JSON.”  
-  - “If the user wants KPIs or aggregations from warehouse tables, consult the **Genie Space**.”
-- **How to synthesize** the final answer (cite sources from KA, attach JSON from IE, summarize from Genie SQL results).
-- **Stop conditions** (e.g., once confidence > X or after N hops).
-
-
-![Guidelines](assets/multi-agent/step3-guidelines.png)
 
 > The supervisor uses AI orchestration patterns to manage **delegation and result synthesis**. Keep guidelines explicit and concise.
 
 ---
 
-### 4) Save & Update
-Click **Save and update** to persist configuration.  
-
-
-![Save-Update](assets/multi-agent/step4-save.png)
-
----
-
-## Test the Supervisor
+## Step 4 - Test the Supervisor
 
 Use the **Test** panel to run prompts that require delegation:
 Try composite prompts like:
