@@ -126,7 +126,9 @@ print("✅ Genie demo tables created: customers, products, orders")
 ![Supervisor-Overview](assets/multi3.png)
 ![Supervisor-Overview](assets/multi4.png)
 
+
 👉 Now Genie can answer SQL-based questions over these datasets.
+
 ---
 
 ### Step 3 Create the Multi Agent Supervisor
