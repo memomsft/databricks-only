@@ -100,7 +100,7 @@ print("✅ Genie demo tables created: customers, products, orders")
 
 ```
 
-![Supervisor-Overview](assets/multi2.png)
+![Supervisor-Overview](assets/multi12.png)
 
 ---
 
