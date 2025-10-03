@@ -111,6 +111,9 @@ print("✅ Genie demo tables created: customers, products, orders")
    - `customers`
    - `products`
    - `orders`
+   - 
+
+![Supervisor-Overview](assets/multi3.png)
 
 👉 Now Genie can answer SQL-based questions over these datasets.
 ---
@@ -120,7 +123,7 @@ print("✅ Genie demo tables created: customers, products, orders")
 1. Open **Agent Bricks → Multi-Agent Supervisor → Build**.  
 2. Name it, e.g., `retail-multi-agent-demo`.
 
-![Supervisor-Overview](assets/multi2.png)
+![Supervisor-Overview](assets/multi4.png)
 
 ---
 
