@@ -21,7 +21,7 @@ A **supervisor agent** that can:
 - At least one **Knowledge Assistant** (pointing to a UC Volume or Vector Search) and/or **Information Extraction** agent ready. 
 - (Optional) An existing **Genie Space** with access to demo tables for ad-hoc questions.
 
-For a more comprehensive view of the requisite visit the official doc:
+For a more comprehensive view of the requisites visit the official doc:
 [Multi Agent Supervisor Requirements](https://learn.microsoft.com/en-us/azure/databricks/generative-ai/agent-bricks/multi-agent-supervisor#requirements)
 
 ---
