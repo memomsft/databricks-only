@@ -1,4 +1,4 @@
-# 05 — Multi-Agent Supervisor (UI Walkthrough)
+# 05 - Multi-Agent Supervisor (UI Walkthrough)
 
 > Multi-Agent Supervisor lets you orchestrate multiple agents and tools (e.g., **Genie Spaces**, **Agent Bricks agents**, and external tools) under a single “supervisor” that coordinates tasks and synthesizes results. 
 
