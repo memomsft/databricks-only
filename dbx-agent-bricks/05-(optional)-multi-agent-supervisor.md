@@ -186,6 +186,8 @@ Try composite prompts like:
 
 
 ![Add-Participants](assets/multi6.png)
+![Add-Participants](assets/multi7.png)
+
 
 Tips:
 - If routing looks wrong, refine the **guidelines** with clearer triggers (keywords, examples).
