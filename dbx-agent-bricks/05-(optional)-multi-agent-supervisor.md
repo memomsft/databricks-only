@@ -127,7 +127,9 @@ print("✅ Genie demo tables created: customers, products, orders")
 ![Supervisor-Overview](assets/multi4.png)
 
 
+
 👉 Now Genie can answer SQL-based questions over these datasets.
+
 
 ---
 
