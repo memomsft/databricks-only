@@ -137,7 +137,7 @@ print("✅ Genie demo tables created: customers, products, orders")
 
 1. Open **Agent Bricks → Multi-Agent Supervisor → Build**.  
 2. Name it, e.g., `Retail-Multi-Agent-Demo`.
-3. Add a **Description**: Example (A retail assistant that can answer policy questions from documents, extract structured details from receipts, and query customer and order data)
+3. Add a **Description**: Example: A retail assistant that can answer policy questions from documents, extract structured details from receipts, and query customer and order data
 4. In **Configure Agents**: add the following participants (we can add up to 20 agents/tools among {Genie Space/Agent Endpoint/*MCP-coming soon}).
    For this demo we will add only two because at the time of this demo only **Knowledge Agent** and **Genie** are supported as participants for a Multi-Agent:
 
