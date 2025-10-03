@@ -137,15 +137,13 @@ print("✅ Genie demo tables created: customers, products, orders")
 
 1. Open **Agent Bricks → Multi-Agent Supervisor → Build**.  
 2. Name it, e.g., `Retail-Multi-Agent-Demo`.
-3. Add a **Description**: Example: A retail assistant that can answer policy questions from documents, extract structured details from receipts, and query customer and order data
+3. Add a **Description**: Add some guidelines for Genie. Example: A retail assistant that can answer policy questions from documents, extract structured details from receipts, and query customer and order data
 4. In **Configure Agents**: add the following participants (we can add up to 20 agents/tools among {Genie Space/Agent Endpoint/*MCP-coming soon}).
    For this demo we will add only two because at the time of this demo only **Knowledge Agent** and **Genie** are supported as participants for a Multi-Agent:
 
 **Knowledge Assistant** - your RAG bot over UC files/Vector Search  (from section 02)
-- **Type**: Knowledge Agent  
-- **Source**: Point to the `knowledge_base` folder created in Section 02.  
-- **Agent Name**: `Retail-Knowledge`  
-- **Describe the content**: “Answers FAQs and policy questions from Markdown documents.”
+- **Type**: `Agent Endpoint` | **Agent Endpoint**: Choose the enpoint for our newly created `Knowledge Assistant` 
+- The rest of the fields will be populated with the information from the agent
 
 
 **Genie**
