@@ -14,7 +14,7 @@ This repository collects multiple end-to-end integration and specific scenarios 
 | Scenario | Description | Folder |
 |---------|-------------|--------|
 | **Databricks Genie + Microsoft Teams** | Create a Genie Space and expose it via Teams for data democratization. | [Genie + MSFT Teams](./dbx-genie-teams) |
-| **Databricks Agent Bricks** | Different Gen AI Features and use cases. | [Databricks Agent Bricks Workshop](./dbx-agent-bricks) |
+| **Databricks Agent Bricks** | Agentic AI use cases. | [Databricks Agent Bricks Workshop](./dbx-agent-bricks) |
   
 ---
 
