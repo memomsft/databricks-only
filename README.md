@@ -15,6 +15,7 @@ This repository collects multiple end-to-end integration and specific scenarios 
 |---------|-------------|--------|
 | **Databricks Genie + Microsoft Teams** | Create a Genie Space and expose it via Teams for data democratization. | [Genie + MSFT Teams](./dbx-genie-teams) |
 | **Databricks Agent Bricks** | Agentic AI use cases. | [Databricks Agent Bricks Workshop](./dbx-agent-bricks) |
+| **Batch Inferencing AOAI External Models** | Perform batch inferencing via AOAI GPT Models from Mosaic AI Gateway. | In construction..|
   
 ---
 
