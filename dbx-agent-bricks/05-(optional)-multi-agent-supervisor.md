@@ -197,15 +197,28 @@ Tips:
 
 ## Use the Supervisor in SQL (ai_query)
 
-Click **Use** to open the SQL/AI editor. Call your supervisor endpoint by name/ID:
+We can take this muti-agent and interact with him from the **SQL Editor** by using the prebuilt `ai_query` function
+- Open the **SQL Editor** and create a new query
+- Run the following query with the same prompt we used in the UI
+
+Please make note of the endpoint from your multi-agent
+
+  ![Add-Participants](assets/multi8.png)
+  
 
 ```sql
 SELECT
   ai_query(
-    "retail-multi-agent-demo",   -- your supervisor name or endpoint ID
-    "Summarize our receipt totals by customer, and cite sources if any were used"
+    "<your_multi-agent_endpoint>",   -- your endpoint ID
+    "What is the return policy for electronics? Also, list the top 3 customers by total spend"
   ) AS response;
 ```
+
+
+You will get the output as we did from the UI
+
+![Add-Participants](assets/multi9.png)
+
 
 ---
 
